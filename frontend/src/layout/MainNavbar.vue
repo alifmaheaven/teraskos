@@ -2,7 +2,7 @@
   <md-toolbar
     id="toolbar"
     md-elevation="0"
-    class="md-transparent md-absolute"
+    class="md-background-navbar-custom md-absolute"
     :class="extraNavClasses"
     :color-on-scroll="colorOnScroll"
   >
@@ -159,6 +159,14 @@
   </md-toolbar>
 </template>
 
+<style>
+  .md-toolbar.md-background-navbar-custom {
+      background-color: #00000091 !important;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      padding-top: 25px;
+  }
+</style>
 <script>
 let resizeTimeout;
 function resizeThrottler(actualResizeHandler) {
@@ -239,11 +247,11 @@ export default {
       this.currentScrollValue = scrollValue;
       if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
         this.extraNavClasses = `md-${this.type}`;
-        navbarColor.classList.remove("md-transparent");
+        navbarColor.classList.remove("md-background-navbar-custom");
       } else {
         if (this.extraNavClasses) {
           this.extraNavClasses = "";
-          navbarColor.classList.add("md-transparent");
+          navbarColor.classList.add("md-background-navbar-custom");
         }
       }
     },
