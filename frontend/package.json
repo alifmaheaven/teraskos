@@ -1,9 +1,9 @@
 {
   "name": "vue-material-kit",
-  "author": "Creative Tim https://www.creative-tim.com/",
-  "description": "Vue Material Kit",
   "version": "1.2.2",
   "private": true,
+  "description": "Vue Material Kit",
+  "author": "Creative Tim https://www.creative-tim.com/",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build && gulp licenses",
@@ -12,6 +12,7 @@
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.17.3",
     "core-js": "3.5.0",
     "nouislider": "14.1.0",
     "v-tooltip": "2.0.2",
@@ -29,14 +30,18 @@
     "@vue/cli-service": "4.1.1",
     "@vue/eslint-config-prettier": "6.0.0",
     "babel-eslint": "10.0.3",
+    "bootstrap": "^4.5.2",
     "eslint": "6.7.2",
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-vue": "6.0.1",
-    "prettier": "1.19.1",
-    "sass": "1.23.7",
-    "sass-loader": "8.0.0",
-    "vue-template-compiler": "2.6.10",
     "gulp": "4.0.2",
-    "gulp-append-prepend": "1.0.8"
+    "gulp-append-prepend": "1.0.8",
+    "popper.js": "^1.16.1",
+    "portal-vue": "^2.1.7",
+    "prettier": "1.19.1",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "vue-cli-plugin-bootstrap-vue": "~0.7.0",
+    "vue-template-compiler": "2.6.10"
   }
 }

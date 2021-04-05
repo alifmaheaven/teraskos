@@ -160,12 +160,12 @@
 </template>
 
 <style>
-  .md-toolbar.md-background-navbar-custom {
-      background-color: #00000091 !important;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      padding-top: 25px;
-  }
+.md-toolbar.md-background-navbar-custom {
+  background-color: #00000091 !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-top: 25px;
+}
 </style>
 <script>
 let resizeTimeout;
