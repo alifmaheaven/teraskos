@@ -62,13 +62,23 @@
       </div>
     </parallax>
     <div class="main main-raised">
-      <div class="section mb-2">
+      
+      <div class="section p-3">
         <div class="container">
-          <div class="title">
-            <h2>Basic Elements</h2>
+          <div class="card">
+            <div class="card-body">
+              
+            </div>
           </div>
         </div>
       </div>
+      
+      <div class="section facility p-3">
+        <div class="container">
+          <nav-pills></nav-pills>
+        </div>
+      </div>
+
       <div class="section section-download" id="downloadSection">
         <div class="container">
           <div class="md-layout text-center">
@@ -170,8 +180,12 @@
 </template>
 
 <script>
+import NavPills from "./components/NavPillsSection";
+
 export default {
-  components: {},
+  components: {
+    NavPills,
+  },
   name: "index",
   bodyClass: "index-page",
   props: {
