@@ -17,25 +17,28 @@ import "./plugins/bootstrap-vue";
 import App from "./App.vue";
 import router from "./router";
 
+import store from './store'
+import mixin from './mixin'
+import Axios from './api'
+import './validate/vee-validate'
+import vSelect from 'vue-select'
+
+// css
+import 'vue-select/dist/vue-select.css';
+
 import MaterialKit from "./plugins/material-kit";
 
 Vue.config.productionTip = false;
 
 Vue.use(MaterialKit);
 
-const NavbarStore = {
-  showNavbar: false
-};
+Vue.mixin(mixin);
 
-Vue.mixin({
-  data() {
-    return {
-      NavbarStore
-    };
-  }
-});
+Vue.prototype.$http = Axios;
+Vue.component('v-select', vSelect)
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount("#app");

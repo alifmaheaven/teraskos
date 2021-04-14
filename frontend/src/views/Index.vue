@@ -64,12 +64,8 @@
     <div class="main main-raised">
       
       <div class="section p-3">
-        <div class="container">
-          <div class="card">
-            <div class="card-body">
-              
-            </div>
-          </div>
+        <div class="container-fluid">
+          <SearchKosAtas/>
         </div>
       </div>
       
@@ -181,10 +177,11 @@
 
 <script>
 import NavPills from "./components/NavPillsSection";
-
+import SearchKosAtas from "./components/homepage/SearchKosAtas";
 export default {
   components: {
     NavPills,
+    SearchKosAtas
   },
   name: "index",
   bodyClass: "index-page",
