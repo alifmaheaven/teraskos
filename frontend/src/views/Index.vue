@@ -62,13 +62,12 @@
       </div>
     </parallax>
     <div class="main main-raised">
-      
       <div class="section p-3">
         <div class="container-fluid">
-          <SearchKosAtas/>
+          <SearchKosAtas />
         </div>
       </div>
-      
+
       <div class="section facility p-3">
         <div class="container">
           <nav-pills></nav-pills>

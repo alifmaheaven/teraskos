@@ -1,5 +1,3 @@
-var computed = {
-  
-}
+var computed = {};
 
-export default computed
+export default computed;

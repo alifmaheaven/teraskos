@@ -17,14 +17,14 @@ import "./plugins/bootstrap-vue";
 import App from "./App.vue";
 import router from "./router";
 
-import store from './store'
-import mixin from './mixin'
-import Axios from './api'
-import './validate/vee-validate'
-import vSelect from 'vue-select'
+import store from "./store";
+import mixin from "./mixin";
+import Axios from "./api";
+import "./validate/vee-validate";
+import vSelect from "vue-select";
 
 // css
-import 'vue-select/dist/vue-select.css';
+import "vue-select/dist/vue-select.css";
 
 import MaterialKit from "./plugins/material-kit";
 
@@ -35,7 +35,7 @@ Vue.use(MaterialKit);
 Vue.mixin(mixin);
 
 Vue.prototype.$http = Axios;
-Vue.component('v-select', vSelect)
+Vue.component("v-select", vSelect);
 
 new Vue({
   router,

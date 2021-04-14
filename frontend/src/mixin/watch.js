@@ -1,5 +1,3 @@
-var watch = {
+var watch = {};
 
-}
-
-export default watch
+export default watch;
