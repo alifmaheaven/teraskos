@@ -1,9 +1,9 @@
 <template>
-  <div class="card card-custom-border-green">
+  <div class="card card-custom-shadow">
     <div class="card-body">
       <div class="col-12">
         <h2 class="font-weight-normal">hello terasers,</h2>
-        <h3 class="font-weight-bold ">want reservation a kos kosan ?</h3>
+        <h3 class="font-weight-bold ">want reservation a kos kosan ? Lets go find it :</h3>
       </div>
       <div class="col-12"></div>
       <div class="col-12">

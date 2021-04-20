@@ -67,7 +67,13 @@
           <SearchKosAtas />
         </div>
       </div>
-
+      
+      <div class="section">
+        <div class="container">
+          <GuideForRegistration />
+        </div>
+      </div>
+      
       <div class="section facility p-3">
         <div class="container">
           <nav-pills></nav-pills>
@@ -177,10 +183,12 @@
 <script>
 import NavPills from "./components/NavPillsSection";
 import SearchKosAtas from "./components/homepage/SearchKosAtas";
+import GuideForRegistration from "./components/homepage/GuideForRegistration";
 export default {
   components: {
     NavPills,
-    SearchKosAtas
+    SearchKosAtas,
+    GuideForRegistration
   },
   name: "index",
   bodyClass: "index-page",
