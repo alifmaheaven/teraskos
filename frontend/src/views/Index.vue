@@ -67,6 +67,12 @@
           <SearchKosAtas />
         </div>
       </div>
+
+      <div class="section">
+        <div class="container">
+          <FasilityOnTerasKos />
+        </div>
+      </div>
       
       <div class="section">
         <div class="container">
@@ -184,11 +190,14 @@
 import NavPills from "./components/NavPillsSection";
 import SearchKosAtas from "./components/homepage/SearchKosAtas";
 import GuideForRegistration from "./components/homepage/GuideForRegistration";
+import FasilityOnTerasKos from "./components/homepage/FasilityOnTerasKos"
+
 export default {
   components: {
     NavPills,
     SearchKosAtas,
-    GuideForRegistration
+    GuideForRegistration,
+    FasilityOnTerasKos
   },
   name: "index",
   bodyClass: "index-page",
