@@ -12,9 +12,6 @@
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/vue-fontawesome": "^2.0.2",
     "axios": "^0.21.1",
     "bootstrap-vue": "^2.17.3",
     "core-js": "3.5.0",

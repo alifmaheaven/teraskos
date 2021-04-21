@@ -69,7 +69,7 @@
       </div>
 
       <div class="section">
-        <div class="container">
+        <div class="container p-3">
           <FasilityOnTerasKos />
         </div>
       </div>
