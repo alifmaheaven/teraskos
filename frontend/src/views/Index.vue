@@ -63,7 +63,7 @@
     </parallax>
     <div class="main main-raised">
       <div class="section p-3">
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
           <SearchKosAtas />
         </div>
       </div>
