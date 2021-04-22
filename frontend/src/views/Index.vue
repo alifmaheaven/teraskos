@@ -85,12 +85,6 @@
           <GuideForRegistration />
         </div>
       </div>
-      
-      <div class="section facility p-3">
-        <div class="container">
-          <nav-pills></nav-pills>
-        </div>
-      </div>
 
       <div class="section section-download" id="downloadSection">
         <div class="container">
@@ -193,7 +187,6 @@
 </template>
 
 <script>
-import NavPills from "./components/NavPillsSection";
 import SearchKosAtas from "./components/homepage/SearchKosAtas";
 import GuideForRegistration from "./components/homepage/GuideForRegistration";
 import FasilityOnTerasKos from "./components/homepage/FasilityOnTerasKos"
@@ -201,7 +194,6 @@ import RecomendKos from "./components/homepage/RecomendKos"
 
 export default {
   components: {
-    NavPills,
     SearchKosAtas,
     GuideForRegistration,
     FasilityOnTerasKos,

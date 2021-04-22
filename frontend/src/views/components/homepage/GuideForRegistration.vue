@@ -19,10 +19,10 @@
         <div class="card-body">
           <div>
               <tabs
-                :tab-name="['Step 1', 'Step 2']"
-                :tab-icon="['dashboard', 'schedule']"
+                :tab-name="['Chat', 'Isi Form', 'Pilih Kos', 'cari', 'bayar', 'selesai']"
+                :tab-icon="['dashboard', 'schedule', 'dashboard', 'dashboard', 'schedule', 'dashboard']"
                 plain
-                flex-column
+                :flex-column="true"
                 nav-pills-icons
                 color-button="success"
               >
@@ -55,10 +55,10 @@
         <div class="card-body">
           <div>
               <tabs
-                :tab-name="['Step 1', 'Step 2']"
-                :tab-icon="['dashboard', 'schedule']"
+                :tab-name="['Chat', 'Isi Form', 'Pilih Kos', 'cari', 'bayar', 'selesai']"
+                :tab-icon="['dashboard', 'schedule', 'dashboard', 'dashboard', 'schedule', 'dashboard']"
                 plain
-                flex-column
+                :flex-column="true"
                 nav-pills-icons
                 color-button="success"
               >

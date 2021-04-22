@@ -20,9 +20,12 @@
             { [getColorButton(colorButton)]: isActivePanel(tabName[index]) }
           ]"
         >
-          {{ tabName[index] }}
+          <div class="haloo">
+            <h6>{{ tabName[index] }}</h6>
+          </div>
+          
           <!-- Step {{index + 1}} -->
-          <md-icon v-if="navPillsIcons">{{ tabIcon[index] }}</md-icon>
+          <!-- <md-icon v-if="navPillsIcons">{{ tabIcon[index] }}</md-icon> -->
         </md-list-item>
       </md-list>
 
