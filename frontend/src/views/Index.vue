@@ -68,13 +68,19 @@
         </div>
       </div>
 
-      <div class="section">
-        <div class="container p-3">
+      <div class="section p-3">
+        <div class="container">
           <FasilityOnTerasKos />
         </div>
       </div>
+
+      <div class="section p-3">
+        <div class="container">
+          <RecomendKos />
+        </div>
+      </div>
       
-      <div class="section">
+      <div class="section p-3">
         <div class="container">
           <GuideForRegistration />
         </div>
@@ -191,13 +197,15 @@ import NavPills from "./components/NavPillsSection";
 import SearchKosAtas from "./components/homepage/SearchKosAtas";
 import GuideForRegistration from "./components/homepage/GuideForRegistration";
 import FasilityOnTerasKos from "./components/homepage/FasilityOnTerasKos"
+import RecomendKos from "./components/homepage/RecomendKos"
 
 export default {
   components: {
     NavPills,
     SearchKosAtas,
     GuideForRegistration,
-    FasilityOnTerasKos
+    FasilityOnTerasKos,
+    RecomendKos
   },
   name: "index",
   bodyClass: "index-page",

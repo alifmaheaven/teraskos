@@ -1,5 +1,9 @@
 <template>
   <div class="row">
+    <div class="col-12">
+      <h2 class="font-weight-normal">Mau jadi Member atau mitra?</h2>
+      <h3 class="font-weight-bold ">Gampang, bagini caranya!</h3>
+    </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
       <div class="card card-custom-border-green my-3">
         <div class="card-body">
