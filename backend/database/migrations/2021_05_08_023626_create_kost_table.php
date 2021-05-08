@@ -24,6 +24,7 @@ class CreateKostTable extends Migration
             $table->integer('kodepos');
             $table->text('alamat');
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFasilitasTable extends Migration
+class CreateKomencustomTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateFasilitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('fasilitas', function (Blueprint $table) {
-            $table->integer('fasilitasID', true);
-            $table->string('nama', 50);
-            $table->text('deskripsi');
+        Schema::create('komencustom', function (Blueprint $table) {
+            $table->integer('ArtikelID')->index('ArtikelID');
+            $table->integer('CustomID')->index('CustomID');
+            $table->text('komen');
+            $table->date('tgl');
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +30,6 @@ class CreateFasilitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fasilitas');
+        Schema::dropIfExists('komencustom');
     }
 }

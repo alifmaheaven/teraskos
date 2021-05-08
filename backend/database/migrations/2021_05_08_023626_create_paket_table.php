@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipeTable extends Migration
+class CreatePaketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTipeTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipe', function (Blueprint $table) {
-            $table->integer('tipeID', true);
+        Schema::create('paket', function (Blueprint $table) {
+            $table->integer('paketID', true);
             $table->string('nama', 50);
-            $table->text('deskripsi');
-            $table->integer('harga');
-            $table->integer('mitraID')->index('mitraID');
-            $table->integer('isActive');
+            $table->text('isi');
+            $table->integer('iaActive');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateTipeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipe');
+        Schema::dropIfExists('paket');
     }
 }

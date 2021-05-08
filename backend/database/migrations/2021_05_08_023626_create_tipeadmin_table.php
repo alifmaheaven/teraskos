@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTerastalkTable extends Migration
+class CreateTipeadminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTerastalkTable extends Migration
      */
     public function up()
     {
-        Schema::create('terastalk', function (Blueprint $table) {
-            $table->integer('talkID', true);
-            $table->string('judul', 50);
+        Schema::create('tipeadmin', function (Blueprint $table) {
+            $table->integer('tipeID')->primary();
+            $table->string('jenis', 10);
             $table->text('deskripsi');
-            $table->date('tgl');
-            $table->string('narasumber', 50);
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateTerastalkTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('terastalk');
+        Schema::dropIfExists('tipeadmin');
     }
 }

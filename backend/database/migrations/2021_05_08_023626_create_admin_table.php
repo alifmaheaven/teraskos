@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNarasumberTable extends Migration
+class CreateAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateNarasumberTable extends Migration
      */
     public function up()
     {
-        Schema::create('narasumber', function (Blueprint $table) {
-            $table->integer('narasumberID', true);
+        Schema::create('admin', function (Blueprint $table) {
+            $table->integer('AdminID', true);
             $table->string('nama', 50);
-            $table->string('email', 100);
-            $table->string('noHP', 15);
-            $table->string('pekerjaan', 50);
-            $table->string('institusi', 50);
-            $table->text('alasan');
+            $table->string('email', 50);
+            $table->string('password', 15);
+            $table->integer('tipeID')->index('tipeID');
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 
@@ -32,6 +31,6 @@ class CreateNarasumberTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('narasumber');
+        Schema::dropIfExists('admin');
     }
 }

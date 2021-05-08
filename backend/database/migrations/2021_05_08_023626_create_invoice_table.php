@@ -23,6 +23,7 @@ class CreateInvoiceTable extends Migration
             $table->integer('keuntungan');
             $table->integer('jenisID')->index('jenisID');
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 

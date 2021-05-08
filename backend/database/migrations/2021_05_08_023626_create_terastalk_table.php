@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKomencustomTable extends Migration
+class CreateTerastalkTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateKomencustomTable extends Migration
      */
     public function up()
     {
-        Schema::create('komencustom', function (Blueprint $table) {
-            $table->integer('ArtikelID')->index('ArtikelID');
-            $table->integer('CustomID')->index('CustomID');
-            $table->text('komen');
+        Schema::create('terastalk', function (Blueprint $table) {
+            $table->integer('talkID', true);
+            $table->string('judul', 50);
+            $table->text('deskripsi');
             $table->date('tgl');
+            $table->string('narasumber', 50);
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +31,6 @@ class CreateKomencustomTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('komencustom');
+        Schema::dropIfExists('terastalk');
     }
 }

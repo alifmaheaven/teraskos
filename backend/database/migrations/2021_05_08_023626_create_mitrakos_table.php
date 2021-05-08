@@ -25,6 +25,7 @@ class CreateMitrakosTable extends Migration
             $table->text('testimoni');
             $table->integer('paketID')->index('paketID');
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipeadminTable extends Migration
+class CreateTipeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateTipeadminTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipeadmin', function (Blueprint $table) {
-            $table->integer('tipeID')->primary();
-            $table->string('jenis', 10);
+        Schema::create('tipe', function (Blueprint $table) {
+            $table->integer('tipeID', true);
+            $table->string('nama', 50);
             $table->text('deskripsi');
+            $table->integer('harga');
+            $table->integer('mitraID')->index('mitraID');
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +31,6 @@ class CreateTipeadminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipeadmin');
+        Schema::dropIfExists('tipe');
     }
 }

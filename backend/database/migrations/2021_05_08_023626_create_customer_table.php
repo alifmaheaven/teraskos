@@ -27,6 +27,7 @@ class CreateCustomerTable extends Migration
             $table->string('upload', 100);
             $table->text('testimoni');
             $table->integer('isActive');
+            $table->timestamps();
         });
     }
 
