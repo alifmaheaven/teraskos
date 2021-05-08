@@ -27,3 +27,14 @@ Route::group(['prefix' => 'customer'], function ($router) {
         Route::get('me', [CustomerController::class, 'user']);
     });
 });
+
+Route::group(['prefix' => 'admin'], function ($router) {
+    Route::post('signup', [AdminController::class, 'register']);
+    Route::post('signin', [AdminController::class, 'login']);
+
+    Route::group(['middleware' => 'jwt.verify'], function () {
+        Route::post('logout', [AdminController::class, 'signout']);
+        Route::post('token-refresh', [AdminController::class, 'refresh']);
+        Route::get('me', [AdminController::class, 'user']);
+    });
+});
