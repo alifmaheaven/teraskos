@@ -38,3 +38,14 @@ Route::group(['prefix' => 'admin'], function ($router) {
         Route::get('me', [AdminController::class, 'user']);
     });
 });
+
+Route::group(['prefix' => 'mitra'], function ($router) {
+    Route::post('signup', [MitraKosController::class, 'register']);
+    Route::post('signin', [MitraKosController::class, 'login']);
+
+    Route::group(['middleware' => 'jwt.verify'], function () {
+        Route::post('logout', [MitraKosController::class, 'signout']);
+        Route::post('token-refresh', [MitraKosController::class, 'refresh']);
+        Route::get('me', [MitraKosController::class, 'user']);
+    });
+});
