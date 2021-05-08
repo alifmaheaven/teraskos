@@ -15,7 +15,7 @@ class CreateFasilitasTable extends Migration
     {
         Schema::create('fasilitas', function (Blueprint $table) {
             $table->integer('fasilitasID', true);
-            $table->string('nama', 50);
+            $table->string('nama');
             $table->text('deskripsi');
             $table->integer('isActive');
             $table->timestamps();

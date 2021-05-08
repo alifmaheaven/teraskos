@@ -15,13 +15,13 @@ class CreateMitrakosTable extends Migration
     {
         Schema::create('mitrakos', function (Blueprint $table) {
             $table->integer('MitraID')->primary();
-            $table->string('nama', 50);
-            $table->string('email', 50);
-            $table->string('password', 15);
-            $table->string('noHP', 15);
+            $table->string('nama');
+            $table->string('email');
+            $table->string('password');
+            $table->string('noHP');
             $table->integer('usia');
-            $table->string('pekerjaan', 50);
-            $table->string('institusi', 50);
+            $table->string('pekerjaan');
+            $table->string('institusi');
             $table->text('testimoni');
             $table->integer('paketID')->index('paketID');
             $table->integer('isActive');

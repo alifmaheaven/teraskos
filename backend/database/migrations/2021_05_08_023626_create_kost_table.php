@@ -17,10 +17,10 @@ class CreateKostTable extends Migration
             $table->integer('kostID', true);
             $table->integer('MitraID')->index('mitraID');
             $table->integer('tipeID')->index('tipeID');
-            $table->string('nama', 50);
+            $table->string('nama');
             $table->text('deskripsi');
-            $table->string('provinsi', 50);
-            $table->string('kota', 50);
+            $table->string('provinsi');
+            $table->string('kota');
             $table->integer('kodepos');
             $table->text('alamat');
             $table->integer('isActive');

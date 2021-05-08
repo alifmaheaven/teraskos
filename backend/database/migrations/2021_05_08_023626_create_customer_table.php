@@ -15,17 +15,16 @@ class CreateCustomerTable extends Migration
     {
         Schema::create('customer', function (Blueprint $table) {
             $table->integer('CustomID', true);
-            $table->string('nama', 50);
-            $table->string('email', 50);
-            $table->string('password', 15);
-            $table->string('akun', 20);
-            $table->string('noHP', 15);
-            $table->string('kota', 20);
+            $table->string('nama');
+            $table->string('email');
+            $table->string('password');
+            $table->string('akun');
+            $table->string('noHP');
+            $table->string('kota');
             $table->text('alamat');
-            $table->string('lulusan', 50);
+            $table->string('lulusan');
             $table->date('lahir');
-            $table->string('upload', 100);
-            $table->text('testimoni');
+            $table->text('testimoni')->nullable();
             $table->integer('isActive');
             $table->timestamps();
         });

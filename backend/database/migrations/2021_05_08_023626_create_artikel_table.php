@@ -15,8 +15,8 @@ class CreateArtikelTable extends Migration
     {
         Schema::create('artikel', function (Blueprint $table) {
             $table->integer('ArtikelID', true);
-            $table->string('judul', 50);
-            $table->string('penulis', 50);
+            $table->string('judul');
+            $table->string('penulis');
             $table->date('tanggal');
             $table->text('isi');
             $table->integer('suka')->nullable();
