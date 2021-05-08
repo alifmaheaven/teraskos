@@ -1,11 +1,12 @@
 <template>
   <div class="wrapper">
-    <parallax class="section page-header header-filter" :style="headerStyle">
+    <parallax class="section page-header header-filter">
       <div class="container-fluid">
         <div class="md-layout">
           <div class="md-layout-item " style="padding:0px;">
             <carousel
               :per-page="1"
+              v-if="responsive"
               loop
               :speed="700"
               autoplay
@@ -16,47 +17,25 @@
               navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
             >
               <slide>
-                <!-- <div class="carousel-caption">
-                <h4>
-                  <md-icon>location_on</md-icon>
-                  Somewhere Beyond, United States
-                </h4>
-              </div> -->
-                <img :src="carousel1" alt="carousel1" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                    <md-icon>location_on</md-icon>
-                    Yellowstone National Park, United States
-                  </h4>
-                </div>
-                <img :src="carousel2" alt="carousel2" />
-              </slide>
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                    <md-icon>location_on</md-icon>
-                    Yellowstone National Park, United States
-                  </h4>
-                </div>
-                <img :src="carousel3" alt="carousel3" />
+                <img :src="carouselDekstop" alt="carousel1" />
               </slide>
             </carousel>
-            <!-- <h1 class="title">Your Story Starts With Us.</h1>
-            <h4>
-              Every landing page needs a small description after the big bold
-              title, that's why we added this text here. Add here all the
-              information that can make you or your product create the first
-              impression.
-            </h4>
-            <br />
-            <md-button
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-              class="md-success md-lg"
-              target="_blank"
-              ><i class="fas fa-play"></i> Watch video</md-button
-            > -->
+            <carousel
+              :per-page="1"
+              v-else
+              loop
+              :speed="700"
+              autoplay
+              :autoplay-timeout="5000"
+              :mouse-drag="false"
+              navigationEnabled
+              navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
+              navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
+            >
+              <slide>
+                <img :src="carouselMobile" alt="carousel1" />
+              </slide>
+            </carousel>
           </div>
         </div>
       </div>
@@ -201,78 +180,35 @@ export default {
   },
   name: "index",
   bodyClass: "index-page",
-  props: {
-    image: {
-      type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
-    },
-    leaf4: {
-      type: String,
-      default: require("@/assets/img/leaf4.png")
-    },
-    leaf3: {
-      type: String,
-      default: require("@/assets/img/leaf3.png")
-    },
-    leaf2: {
-      type: String,
-      default: require("@/assets/img/leaf2.png")
-    },
-    leaf1: {
-      type: String,
-      default: require("@/assets/img/leaf1.png")
-    },
-    signup: {
-      type: String,
-      default: require("@/assets/img/city.jpg")
-    },
-    landing: {
-      type: String,
-      default: require("@/assets/img/landing.jpg")
-    },
-    profile: {
-      type: String,
-      default: require("@/assets/img/profile.jpg")
-    }
-  },
+  props: {},
   data() {
     return {
       firstname: null,
       email: null,
       password: null,
-      leafShow: false,
-      carousel1: require("@/assets/img/nature-2.jpg"),
-      carousel2: require("@/assets/img/nature.jpg"),
-      carousel3: require("@/assets/img/nature-3.jpg")
+      responsive: false,
+      carouselDekstop: require("@/assets/img/benner/Banner Web.jpg"),
+      carouselMobile: require("@/assets/img/benner/Banner Mobile-01.jpg"),
+      // carousel3: require("@/assets/img/nature-3.jpg")
     };
   },
   methods: {
-    leafActive() {
+    FuncReponsive() {
       if (window.innerWidth < 768) {
-        this.leafShow = false;
+        this.responsive = false;
       } else {
-        this.leafShow = true;
+        this.responsive = true;
       }
     }
   },
   computed: {
-    headerStyle() {
-      return {
-        backgroundImage: `url(${this.image})`
-      };
-    },
-    signupImage() {
-      return {
-        backgroundImage: `url(${this.signup})`
-      };
-    }
   },
   mounted() {
-    this.leafActive();
-    window.addEventListener("resize", this.leafActive);
+    this.FuncReponsive();
+    window.addEventListener("resize", this.FuncReponsive);
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.leafActive);
+    window.removeEventListener("resize", this.FuncReponsive);
   }
 };
 </script>

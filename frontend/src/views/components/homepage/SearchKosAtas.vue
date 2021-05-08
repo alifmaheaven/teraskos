@@ -1,9 +1,11 @@
 <template>
   <div class="card card-custom-shadow">
     <div class="card-body">
-      <div class="col-12">
-        <h2 class="font-weight-normal">hello terasers,</h2>
-        <h3 class="font-weight-bold ">want reservation a kos kosan ? Lets go find it :</h3>
+      <div class="row">
+        <div class="col-12">
+          <h2 class="font-weight-normal">hello terasers,</h2>
+          <h3 class="font-weight-bold ">Mau cari kos kosan dimana nih? yuk cari :</h3>
+        </div>
       </div>
       <div class="col-12"></div>
       <div class="col-12">
@@ -37,7 +39,7 @@
                         >.
                       </template>
                       <em style="opacity: 0.5;" v-else
-                        >Start typing to search for a country.</em
+                        >Start typing to search for a kos.</em
                       >
                     </v-select>
                     <div class="invalid-feedback">
@@ -119,7 +121,7 @@
               </div>
               <div class="row col-12">
                 <div class="col-12 col-sm-6 col-md-8 col-lg-8 d-flex align-items-center justify-content-end">
-                  <h3>Lets go, gets your kos kosan! and get a discount on it!</h3>
+                  <!-- <h3>Lets go, gets your kos kosan! and get a discount on it!</h3> -->
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
                   <b-button pill variant="outline-success" class="w-75" size="md"><b-icon icon="search"></b-icon> search</b-button>
