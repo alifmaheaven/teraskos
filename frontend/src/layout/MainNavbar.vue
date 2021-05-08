@@ -8,7 +8,9 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">Vue Material Kit</h3>
+        <!-- <h3 class="md-title">Vue Material Kit</h3> -->
+        <b-img :class="{ 'd-none': isScrolled, 'd-block': !isScrolled }" :src="image.logoWhite" fluid alt="Fluid image" width="100" height="100" style="height: 3.5rem;width: 9rem;"></b-img>
+        <b-img :class="{ 'd-none': !isScrolled, 'd-block': isScrolled }" :src="image.logoOri" fluid alt="Fluid image" width="100" height="100" style="height: 3.5rem;width: 9rem;"></b-img>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -161,7 +163,7 @@
 
 <style>
 .md-toolbar.md-background-navbar-custom {
-  background-color: #00000091 !important;
+  background-color: #0c8744 !important;
   -webkit-box-shadow: none;
   box-shadow: none;
   padding-top: 25px;
@@ -210,7 +212,12 @@ export default {
   data() {
     return {
       extraNavClasses: "",
-      toggledClass: false
+      isScrolled:false,
+      toggledClass: false,
+      image:{
+        logoOri:require("@/assets/img/icon/(ori) Logo Teraskos-Hor (1).png"),
+        logoWhite:require("@/assets/img/icon/(white) Logo Teraskos-Hor.png")
+      }
     };
   },
   computed: {
@@ -246,9 +253,11 @@ export default {
       let navbarColor = document.getElementById("toolbar");
       this.currentScrollValue = scrollValue;
       if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
+        this.isScrolled = true;
         this.extraNavClasses = `md-${this.type}`;
         navbarColor.classList.remove("md-background-navbar-custom");
       } else {
+        this.isScrolled = false;
         if (this.extraNavClasses) {
           this.extraNavClasses = "";
           navbarColor.classList.add("md-background-navbar-custom");
