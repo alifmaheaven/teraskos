@@ -14,15 +14,15 @@ class CreateMitrakosTable extends Migration
     public function up()
     {
         Schema::create('mitrakos', function (Blueprint $table) {
-            $table->integer('MitraID')->primary();
+            $table->integer('MitraID', true);
             $table->string('nama');
             $table->string('email');
             $table->string('password');
             $table->string('noHP');
             $table->integer('usia');
             $table->string('pekerjaan');
-            $table->string('institusi');
-            $table->text('testimoni');
+            $table->string('institusi')->nullable();
+            $table->text('testimoni')->nullable();
             $table->integer('paketID')->index('paketID');
             $table->integer('isActive');
             $table->timestamps();
