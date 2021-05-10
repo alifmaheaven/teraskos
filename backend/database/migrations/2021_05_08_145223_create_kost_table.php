@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminTable extends Migration
+class CreateKostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
-            $table->integer('AdminID', true);
-            $table->string('nama', 50);
-            $table->string('email', 50);
-            $table->string('password', 15);
+        Schema::create('kost', function (Blueprint $table) {
+            $table->integer('kostID', true);
+            $table->integer('MitraID')->index('mitraID');
             $table->integer('tipeID')->index('tipeID');
+            $table->string('nama');
+            $table->text('deskripsi');
+            $table->string('provinsi');
+            $table->string('kota');
+            $table->integer('kodepos');
+            $table->text('alamat');
             $table->integer('isActive');
             $table->timestamps();
         });
@@ -31,6 +35,6 @@ class CreateAdminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('kost');
     }
 }

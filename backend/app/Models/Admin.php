@@ -8,29 +8,24 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
+class Admin extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'customer';
-    protected $primaryKey = 'CustomID';
-
+    protected $table = 'admin';
+    protected $primaryKey = 'AdminID';
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'CustomID',
+        'AdminID',
         'nama',
         'email',
         'password',
-        'akun',
-        'noHP',
-        'kota',
-        'alamat',
-        'lulusan',
-        'lahir',
+        'tipeID',
         'isActive',
     ];
 

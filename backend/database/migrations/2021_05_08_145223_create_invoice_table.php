@@ -14,7 +14,7 @@ class CreateInvoiceTable extends Migration
     public function up()
     {
         Schema::create('invoice', function (Blueprint $table) {
-            $table->string('invoiceID', 100)->primary();
+            $table->string('invoiceID')->primary();
             $table->integer('CustomID')->index('CustomID');
             $table->integer('KostID')->index('KostID');
             $table->date('checkIn');
@@ -22,6 +22,7 @@ class CreateInvoiceTable extends Migration
             $table->integer('bayar');
             $table->integer('keuntungan');
             $table->integer('jenisID')->index('jenisID');
+            $table->string('upload');
             $table->integer('isActive');
             $table->timestamps();
         });

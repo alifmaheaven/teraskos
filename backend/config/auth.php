@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',
         'passwords' => 'users',
     ],
 
@@ -42,8 +42,20 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'jwt',
             'provider' => 'users',
+            'hash' => false,
+        ],
+
+        'mitrakos-api' => [
+            'driver' => 'jwt',
+            'provider' => 'mitrakos',
+            'hash' => false,
+        ],
+
+        'admin-api' => [
+            'driver' => 'jwt',
+            'provider' => 'admin',
             'hash' => false,
         ],
     ],
@@ -69,6 +81,16 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'mitrakos' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\MitraKos::class,
+        ],
+
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [
