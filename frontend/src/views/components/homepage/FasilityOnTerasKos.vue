@@ -23,10 +23,11 @@
                <div class="card-body">
                  <div class="row">
                    <div class="col-12 d-flex justify-content-center">
-                     <b-icon icon="bell-fill" font-scale="2" variant="success"></b-icon>
+                     <!-- <b-avatar :src="item.icon" variant="light" size="lg" square></b-avatar> -->
+                     <b-img :src="item.icon" fluid style="width:40px;height:40px;" v-b-tooltip.hover.top="item.desc"></b-img>
                    </div>
-                   <div class="col-12 d-flex justify-content-center">
-                     <h6>AC</h6>
+                   <div class="col-12 d-flex justify-content-center text-center">
+                     <h6>{{item.name}}</h6>
                    </div> 
                  </div>                 
               </div>
@@ -46,69 +47,59 @@ export default {
       form: {},
       fasility:[
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"wifi umum",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/wifi umum.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"double bed",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Double Bed.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"k.mandi dalam",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Kamar Mandi Dalam.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"k.mandi luar",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Kamar Mandi Luar.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"lemari pendingin",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Kulkas.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"lemari pakaian",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Lemari Pakaian.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"meja belajar",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Meja Belajar.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"jemuran pakaian",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Ruang Jemur Pakaian.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"kipas angin",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Sewa Kipas Angin.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"single bed",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Single Bed.svg"),
         },
         {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
-        },
-        {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
-        },
-        {
-          name:"Air Conditioner",
-          desc:"",
-          icon:""
+          name:"tempat parkir",
+          desc:"semua kamar bisa menikmati fasilitas ini",
+          icon: require("@/assets/img/icon/fasilitas/Tempat Parkir.svg"),
         },
       ]
     };
