@@ -36,8 +36,8 @@
             </div>
             <div class="team-content">
                 <div class="team-info">
-                    <h3 class="title">M. Rakhmat Setiawan</h3>
-                    <span class="post">Founder & CEO</span>
+                    <h3 class="title">Safitri Nur Wulandari	</h3>
+                    <span class="post">Co-Founder & COO</span>
                 </div>
             </div>
         </div>

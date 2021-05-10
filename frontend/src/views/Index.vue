@@ -83,6 +83,12 @@
         </div>
       </div>
 
+      <div class="section p-3">
+        <div class="container">
+          <ImpactTeraskos />
+        </div>
+      </div>
+
       <div class="section section-download" id="downloadSection">
         <div class="container">
           <div class="sharing-area text-center">
@@ -119,6 +125,7 @@ import RecomendKos from "./components/homepage/RecomendKos"
 import AboutTerasKos from "./components/homepage/AboutTerasKos"
 import TestimoniTerasKos from "./components/homepage/TestimoniTerasKos"
 import OurTeamTeraskos from "./components/homepage/OurTeamTeraskos"
+import ImpactTeraskos from "./components/homepage/ImpactTeraskos"
 
 export default {
   components: {
@@ -128,7 +135,8 @@ export default {
     RecomendKos,
     AboutTerasKos,
     TestimoniTerasKos,
-    OurTeamTeraskos
+    OurTeamTeraskos,
+    ImpactTeraskos
   },
   name: "index",
   bodyClass: "index-page",

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12">
           <h2 class="font-weight-normal">hello terasers,</h2>
-          <h3 class="font-weight-bold ">Mau cari kos kosan dimana nih? yuk cari :</h3>
+          <h3 class="font-weight-bold">Mau cari kos kosan dimana nih? yuk cari :</h3>
         </div>
       </div>
       <div class="col-12"></div>
