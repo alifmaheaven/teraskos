@@ -67,6 +67,12 @@
 
       <div class="section p-3">
         <div class="container">
+          <FaqTeraskos />
+        </div>
+      </div>
+
+      <div class="section p-3">
+        <div class="container">
           <TestimoniTerasKos />
         </div>
       </div>
@@ -126,7 +132,7 @@ import AboutTerasKos from "./components/homepage/AboutTerasKos"
 import TestimoniTerasKos from "./components/homepage/TestimoniTerasKos"
 import OurTeamTeraskos from "./components/homepage/OurTeamTeraskos"
 import ImpactTeraskos from "./components/homepage/ImpactTeraskos"
-
+import FaqTeraskos from "./components/homepage/FaqTeraskos"
 export default {
   components: {
     SearchKosAtas,
@@ -136,7 +142,8 @@ export default {
     AboutTerasKos,
     TestimoniTerasKos,
     OurTeamTeraskos,
-    ImpactTeraskos
+    ImpactTeraskos,
+    FaqTeraskos
   },
   name: "index",
   bodyClass: "index-page",
