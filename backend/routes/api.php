@@ -2,10 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Orion\Facades\Orion;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MitraKosController;
-use App\Http\Controllers\TipeController;
+use App\Http\Controllers\TipeAdminController;
+use App\Http\Controllers\TipeMitraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +54,6 @@ Route::group(['prefix' => 'mitra'], function ($router) {
 });
 
 Route::group(['prefix' => 'tipe'], function ($router) {
-    Route::post('admin', [TipeController::class, 'addadmin']);
-    Route::post('mitra', [TipeController::class, 'addmitra']);
+    Orion::resource('admin', TipeAdminController::class);
+    Orion::resource('mitra', TipeMitraController::class);
 });
