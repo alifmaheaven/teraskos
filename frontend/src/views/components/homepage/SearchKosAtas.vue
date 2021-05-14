@@ -124,7 +124,7 @@
                   <!-- <h3>Lets go, gets your kos kosan! and get a discount on it!</h3> -->
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
-                  <b-button pill variant="outline-success" class="w-75" size="md"><b-icon icon="search"></b-icon> search</b-button>
+                  <b-button pill variant="outline-success" @click="search()" class="w-75" size="md"><b-icon icon="search"></b-icon> search</b-button>
                 </div>
               </div>
             </div>
@@ -178,6 +178,23 @@ export default {
     disableBeforeCheckin(date) {  
         return date < new Date(this.form.checkin);  
     },
+    search(){
+      this.$refs.form.validate().then(success => {
+        // if (!success) {
+        //     var cekForm = document.getElementsByClassName("is-invalid");
+        //     cekForm[0].focus();
+        //     this.$swal({
+        //         icon: 'error',
+        //         title: 'Maaf',
+        //         text: 'Yuk dilengkapi dulu form pencariannya!',
+        //         showConfirmButton: false,
+        //     });
+        //     return;
+        // }
+        window.open(`https://api.whatsapp.com/send?phone=6285156597025&text=Assalamualaikum%20wr.%20wb.%20%0Asaya%20ingin%20memesan%20kos%20daerah%20%3A%20${this.form.location}%0Adari%20tanggal%20%3A%0Acheck%20in%20%3A%20%20${this.reformatDateToID(this.form.checkin).replace(" ", "%20").replace(",", "%2C")}%0Acheck%20out%3A%20%20${this.reformatDateToID(this.form.checkout).replace(" ", "%20").replace(",", "%2C")}%0Abanyak%20hari%20%3A%20${this.timeRemaning.replace(" ", "%20").replace(",", "%2C")}%0A%0Aterimakasih%2C%0A`);
+        // https://api.whatsapp.com/send?phone=6285156597025&text=Assalamualaikum%20wr.%20wb.%20%0Asaya%20ingin%20memesan%20kos%20daerah%20%3A%20%0Adari%20tanggal%20%3A%0Acheck%20in%20%3A%0Acheck%20out%3A%0Abanyak%20hari%20%3A%0A%0Aterimakasih%2C%0A   2%20bulan%2C%2011%20hari
+      });
+    }
   }
 };
 </script>

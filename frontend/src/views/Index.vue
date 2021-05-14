@@ -100,11 +100,11 @@
           <div class="sharing-area text-center">
             <div class="md-layout">
               <div class="md-layout-item">
-                <h3>Thank you for supporting us!</h3>
+                <h3>Terimakasih sudah mensupport kita!</h3>
               </div>
             </div>
 
-            <md-button class="md-twitter"
+            <!-- <md-button class="md-twitter"
               ><i class="fab fa-twitter"></i>Tweet</md-button
             >
             <md-button class="md-facebook"
@@ -115,7 +115,7 @@
             >
             <md-button class="md-github"
               ><i class="fab fa-github"></i> Star</md-button
-            >
+            > -->
           </div>
         </div>
       </div>

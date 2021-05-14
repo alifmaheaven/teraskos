@@ -7,7 +7,7 @@
     <div class="container">
       <nav>
         <ul>
-          <li>
+          <!-- <li>
             <a href="https://www.creative-tim.com">
               Creative Tim
             </a>
@@ -26,12 +26,12 @@
             <a href="https://www.creative-tim.com/license">
               Licenses
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <div class="copyright">
         &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
-        <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a>
+        <a href="https://teraskos.id/" target="_blank">Teraskos Tim</a>
         for a better web.
       </div>
     </div>
