@@ -67,6 +67,12 @@
 
       <div class="section p-3">
         <div class="container">
+          <FaqTeraskos />
+        </div>
+      </div>
+
+      <div class="section p-3">
+        <div class="container">
           <TestimoniTerasKos />
         </div>
       </div>
@@ -83,16 +89,22 @@
         </div>
       </div>
 
+      <div class="section p-3">
+        <div class="container">
+          <ImpactTeraskos />
+        </div>
+      </div>
+
       <div class="section section-download" id="downloadSection">
         <div class="container">
           <div class="sharing-area text-center">
             <div class="md-layout">
               <div class="md-layout-item">
-                <h3>Thank you for supporting us!</h3>
+                <h3>Terimakasih sudah mensupport kita!</h3>
               </div>
             </div>
 
-            <md-button class="md-twitter"
+            <!-- <md-button class="md-twitter"
               ><i class="fab fa-twitter"></i>Tweet</md-button
             >
             <md-button class="md-facebook"
@@ -103,15 +115,20 @@
             >
             <md-button class="md-github"
               ><i class="fab fa-github"></i> Star</md-button
-            >
+            > -->
           </div>
         </div>
       </div>
+
+      <quick-menu :menu-count="fabButton.getCount" :icon-class="fabButton.icons" :menu-url-list="fabButton.list" :background-color="fabButton.backgroundColor" :color="fabButton.color" :position="fabButton.position" :is-open-new-tab="fabButton.getIsOpenNewTab" @process="print"></quick-menu>
+
+
     </div>
   </div>
 </template>
 
 <script>
+import quickMenu from 'vue-quick-menu'
 import SearchKosAtas from "./components/homepage/SearchKosAtas";
 import GuideForRegistration from "./components/homepage/GuideForRegistration";
 import FasilityOnTerasKos from "./components/homepage/FasilityOnTerasKos"
@@ -119,7 +136,8 @@ import RecomendKos from "./components/homepage/RecomendKos"
 import AboutTerasKos from "./components/homepage/AboutTerasKos"
 import TestimoniTerasKos from "./components/homepage/TestimoniTerasKos"
 import OurTeamTeraskos from "./components/homepage/OurTeamTeraskos"
-
+import ImpactTeraskos from "./components/homepage/ImpactTeraskos"
+import FaqTeraskos from "./components/homepage/FaqTeraskos"
 export default {
   components: {
     SearchKosAtas,
@@ -128,13 +146,25 @@ export default {
     RecomendKos,
     AboutTerasKos,
     TestimoniTerasKos,
-    OurTeamTeraskos
+    OurTeamTeraskos,
+    ImpactTeraskos,
+    FaqTeraskos,
+    quickMenu
   },
   name: "index",
   bodyClass: "index-page",
   props: {},
   data() {
     return {
+      fabButton:{
+        count:4,
+        icons:["fab fa-whatsapp","fab fa-instagram","fab fa-linkedin","fab fa-facebook-square"],
+        list:[{'isLink':false},{'isLink':false},{'isLink':false},{'isLink':false}],
+        backgroundColor:'#0c8744',
+        color:'#ffffff',
+        position:'bottom-right',
+        isOpenNewTab:false
+      },
       firstname: null,
       email: null,
       password: null,
@@ -151,9 +181,26 @@ export default {
       } else {
         this.responsive = true;
       }
+    },
+    print(key){
+      if (key == 0) {
+        window.open("https://wa.me/6285704368756")
+      } else if(key == 1){
+        window.open('https://www.instagram.com/teraskosid/')
+      } else if (key == 2) {
+        window.open('https://www.linkedin.com/company/teraskos');
+      } else if (key == 3) {
+        window.open('https://www.facebook.com/teraskosid');
+      }
     }
   },
   computed: {
+    getCount(){
+      return Number(this.count)
+    },
+    getIsOpenNewTab(){
+      return Boolean(this.isOpenNewTab)
+    }
   },
   mounted() {
     this.FuncReponsive();

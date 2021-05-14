@@ -71,17 +71,17 @@
                 v-if="showDownload"
               >
                 <i class="material-icons">content_paste</i>
-                <p>Documentation</p>
+                <p>Article</p>
               </md-list-item>
 
-              <md-list-item
+              <!-- <md-list-item
                 href="javascript:void(0)"
                 @click="scrollToElement()"
                 v-if="showDownload"
               >
                 <i class="material-icons">cloud_download</i>
                 <p>Download</p>
-              </md-list-item>
+              </md-list-item> -->
 
               <li class="md-list-item" v-else>
                 <a
@@ -122,36 +122,46 @@
                   </div>
                 </a>
               </li>
-
+              
               <md-list-item
-                href="https://twitter.com/CreativeTim"
+                href="https://wa.me/6285704368756"
                 target="_blank"
               >
-                <i class="fab fa-twitter"></i>
-                <p class="hidden-lg">Twitter</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Twitter</md-tooltip
-                >
+                <i id="whatsapp" class="fab fa-whatsapp"></i>
+                <p class="hidden-lg">Whatsapp</p>
+                <b-tooltip target="whatsapp" variant="light">
+                  Hubungi kita lewat Whatsapp
+                </b-tooltip>
               </md-list-item>
               <md-list-item
-                href="https://www.facebook.com/CreativeTim"
+                href="https://www.instagram.com/teraskosid/"
                 target="_blank"
               >
-                <i class="fab fa-facebook-square"></i>
-                <p class="hidden-lg">Facebook</p>
-                <md-tooltip md-direction="bottom"
-                  >Like us on Facebook</md-tooltip
-                >
-              </md-list-item>
-              <md-list-item
-                href="https://www.instagram.com/CreativeTimOfficial"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
+                <i id="instagram" class="fab fa-instagram"></i>
                 <p class="hidden-lg">Instagram</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Instagram</md-tooltip
-                >
+                <b-tooltip target="instagram" variant="light">
+                  Follow kita di Instagram
+                </b-tooltip>
+              </md-list-item>
+              <md-list-item
+                href="https://www.linkedin.com/company/teraskos"
+                target="_blank"
+              >
+                <i id="linkedin" class="fab fa-linkedin"></i>
+                <p class="hidden-lg">Linked In</p>
+                <b-tooltip target="linkedin" variant="light">
+                  Kepoin kita di Linked In
+                </b-tooltip>
+              </md-list-item>
+              <md-list-item
+                href="https://www.facebook.com/teraskosid"
+                target="_blank"
+              >
+                <i id="facebook" class="fab fa-facebook-square"></i>
+                <p class="hidden-lg">Facebook</p>
+                <b-tooltip target="facebook" variant="light">
+                  Like fans page kita di Facebook
+                </b-tooltip>
               </md-list-item>
             </md-list>
           </div>
