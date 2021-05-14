@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MitraKosController;
+use App\Http\Controllers\TipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,4 +49,9 @@ Route::group(['prefix' => 'mitra'], function ($router) {
         Route::post('token-refresh', [MitraKosController::class, 'refresh']);
         Route::get('me', [MitraKosController::class, 'user']);
     });
+});
+
+Route::group(['prefix' => 'tipe'], function ($router) {
+    Route::post('admin', [TipeController::class, 'addadmin']);
+    Route::post('mitra', [TipeController::class, 'addmitra']);
 });

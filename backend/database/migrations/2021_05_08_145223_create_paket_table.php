@@ -17,7 +17,7 @@ class CreatePaketTable extends Migration
             $table->integer('paketID', true);
             $table->string('nama', 50);
             $table->text('isi');
-            $table->integer('iaActive');
+            $table->integer('isActive');
             $table->timestamps();
         });
     }
