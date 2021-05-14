@@ -15,7 +15,7 @@ class CreateTipeadminTable extends Migration
     {
         Schema::create('tipeadmin', function (Blueprint $table) {
             $table->integer('tipeID')->primary();
-            $table->string('jenis', 10);
+            $table->string('jenis');
             $table->text('deskripsi');
             $table->integer('isActive');
             $table->timestamps();

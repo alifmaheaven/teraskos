@@ -54,6 +54,15 @@ Route::group(['prefix' => 'mitra'], function ($router) {
 });
 
 Route::group(['prefix' => 'tipe'], function ($router) {
-    Orion::resource('admin', TipeAdminController::class);
-    Orion::resource('mitra', TipeMitraController::class);
+    Route::get('admin', [TipeAdminController::class, 'index']);
+    Route::get('admin/{tipeID}', [TipeAdminController::class, 'show']);
+    Route::post('admin', [TipeAdminController::class, 'store']);
+    Route::put('admin/{tipeID}', [TipeAdminController::class, 'update']);
+    Route::delete('admin/{tipeID}', [TipeAdminController::class, 'delete']);
+
+    Route::get('mitra', [TipeMitraController::class, 'index']);
+    Route::get('mitra/{MitraID}', [TipeMitraController::class, 'show']);
+    Route::post('mitra', [TipeMitraController::class, 'store']);
+    Route::put('mitra/{MitraID}', [TipeMitraController::class, 'update']);
+    Route::delete('mitra/{MitraID}', [TipeMitraController::class, 'delete']);
 });

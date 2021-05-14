@@ -10,6 +10,7 @@ class TipeAdmin extends Model
     use HasFactory;
 
     protected $table = 'tipeadmin';
+    protected $primaryKey = "tipeID";
     
     /**
      * The attributes that are mass assignable.
