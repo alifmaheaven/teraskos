@@ -8,6 +8,8 @@ use App\Http\Controllers\MitraKosController;
 use App\Http\Controllers\TipeAdminController;
 use App\Http\Controllers\TipeMitraController;
 use App\Http\Controllers\TipeKostController;
+use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\KostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,4 +73,13 @@ Route::group(['prefix' => 'tipe'], function ($router) {
     Route::post('kost', [TipeKostController::class, 'store']);
     Route::put('kost/{tipeID}', [TipeKostController::class, 'update']);
     Route::delete('kost/{tipeID}', [TipeKostController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'kost'], function ($router) {
+    Route::get('fasilitas', [FasilitasController::class, 'index']);
+    Route::get('fasilitas/{fasilitasID}', [FasilitasController::class, 'show']);
+    Route::post('fasilitas', [FasilitasController::class, 'store']);
+    Route::put('fasilitas/{fasilitasID}', [FasilitasController::class, 'update']);
+    Route::delete('fasilitas/{fasilitasID}', [FasilitasController::class, 'delete']);
+
 });
