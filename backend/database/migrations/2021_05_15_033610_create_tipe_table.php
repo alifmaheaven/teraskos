@@ -18,7 +18,7 @@ class CreateTipeTable extends Migration
             $table->string('nama', 50);
             $table->text('deskripsi');
             $table->integer('harga');
-            $table->integer('mitraID')->index('mitraID');
+            $table->integer('MitraID')->index('MitraID');
             $table->integer('isActive');
             $table->timestamps();
         });

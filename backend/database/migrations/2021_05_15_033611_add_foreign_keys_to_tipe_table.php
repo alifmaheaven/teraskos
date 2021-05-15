@@ -14,7 +14,7 @@ class AddForeignKeysToTipeTable extends Migration
     public function up()
     {
         Schema::table('tipe', function (Blueprint $table) {
-            $table->foreign('mitraID', 'tipe_ibfk_1')->references('MitraID')->on('mitrakos')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+            $table->foreign('MitraID', 'tipe_ibfk_1')->references('MitraID')->on('mitrakos')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }
 
