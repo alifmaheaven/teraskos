@@ -9,8 +9,8 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <!-- <h3 class="md-title">Vue Material Kit</h3> -->
-        <b-img :class="{ 'd-none': isScrolled, 'd-block': !isScrolled }" :src="image.logoWhite" fluid alt="Fluid image" width="100" height="100" style="height: 3.5rem;width: 9rem;"></b-img>
-        <b-img :class="{ 'd-none': !isScrolled, 'd-block': isScrolled }" :src="image.logoOri" fluid alt="Fluid image" width="100" height="100" style="height: 3.5rem;width: 9rem;"></b-img>
+        <b-img :class="{ 'd-none': isScrolled, 'd-block': !isScrolled }" :src="image.logoWhite" fluid alt="Fluid image" width="100" height="100" style="height: 3.5rem;width: 8.3rem;"></b-img>
+        <b-img :class="{ 'd-none': !isScrolled, 'd-block': isScrolled }" :src="image.logoOri" fluid alt="Fluid image" width="100" height="100" style="height: 3.5rem;width: 8.3rem;"></b-img>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -66,24 +66,24 @@
               </li>
 
               <md-list-item
-                href="https://demos.creative-tim.com/vue-material-kit/documentation/"
-                target="_blank"
-                v-if="showDownload"
               >
-                <i class="material-icons">content_paste</i>
-                <p>Article</p>
+                <!-- <i class="material-icons">content_paste</i> -->
+                <router-link tag="a" class="col" class-active="active" to="/" exact>Home</router-link>
+              </md-list-item>
+              <md-list-item
+              >
+                <!-- <i class="material-icons">content_paste</i> -->
+                <router-link tag="a" class="col" class-active="active" to="/mitra" exact>Mitra</router-link>
+              </md-list-item>
+              <md-list-item
+              >
+                <!-- <i class="material-icons">content_paste</i> -->
+                <!-- <p>Article</p> -->
+                <router-link tag="a" class="col" class-active="active" to="/investor" exact>Investor</router-link>
               </md-list-item>
 
-              <!-- <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="showDownload"
-              >
-                <i class="material-icons">cloud_download</i>
-                <p>Download</p>
-              </md-list-item> -->
 
-              <li class="md-list-item" v-else>
+              <!-- <li class="md-list-item" v-else>
                 <a
                   href="javascript:void(0)"
                   class="md-list-item-router md-list-item-container md-button-clean dropdown"
@@ -121,9 +121,9 @@
                     </drop-down>
                   </div>
                 </a>
-              </li>
+              </li> -->
               
-              <md-list-item
+              <!-- <md-list-item
                 href="https://wa.me/6285704368756"
                 target="_blank"
               >
@@ -162,7 +162,7 @@
                 <b-tooltip target="facebook" variant="light">
                   Like fans page kita di Facebook
                 </b-tooltip>
-              </md-list-item>
+              </md-list-item> -->
             </md-list>
           </div>
         </div>
@@ -177,6 +177,10 @@
   -webkit-box-shadow: none;
   box-shadow: none;
   padding-top: 25px;
+}
+a.router-link-exact-active.router-link-active{
+  font-weight: bolder;
+  font-size: 15px;
 }
 </style>
 <script>
