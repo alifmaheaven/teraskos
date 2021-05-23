@@ -41,7 +41,6 @@
       </div>
     </parallax>
     <div class="main main-raised">
-
       <div class="section section-download" id="downloadSection">
         <div class="container">
           <div class="sharing-area text-center">
@@ -67,37 +66,53 @@
         </div>
       </div>
 
-      <quick-menu :menu-count="fabButton.getCount" :icon-class="fabButton.icons" :menu-url-list="fabButton.list" :background-color="fabButton.backgroundColor" :color="fabButton.color" :position="fabButton.position" :is-open-new-tab="fabButton.getIsOpenNewTab" @process="print"></quick-menu>
-
-
+      <quick-menu
+        :menu-count="fabButton.getCount"
+        :icon-class="fabButton.icons"
+        :menu-url-list="fabButton.list"
+        :background-color="fabButton.backgroundColor"
+        :color="fabButton.color"
+        :position="fabButton.position"
+        :is-open-new-tab="fabButton.getIsOpenNewTab"
+        @process="print"
+      ></quick-menu>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-  },
+  components: {},
   name: "index",
   bodyClass: "index-page",
   props: {},
   data() {
     return {
-      fabButton:{
-        count:4,
-        icons:["fab fa-whatsapp","fab fa-instagram","fab fa-linkedin","fab fa-facebook-square"],
-        list:[{'isLink':false},{'isLink':false},{'isLink':false},{'isLink':false}],
-        backgroundColor:'#0c8744',
-        color:'#ffffff',
-        position:'bottom-right',
-        isOpenNewTab:false
+      fabButton: {
+        count: 4,
+        icons: [
+          "fab fa-whatsapp",
+          "fab fa-instagram",
+          "fab fa-linkedin",
+          "fab fa-facebook-square"
+        ],
+        list: [
+          { isLink: false },
+          { isLink: false },
+          { isLink: false },
+          { isLink: false }
+        ],
+        backgroundColor: "#0c8744",
+        color: "#ffffff",
+        position: "bottom-right",
+        isOpenNewTab: false
       },
       firstname: null,
       email: null,
       password: null,
       responsive: false,
       carouselDekstop: require("@/assets/img/benner/Banner Web.jpg"),
-      carouselMobile: require("@/assets/img/benner/Banner Mobile-01.jpg"),
+      carouselMobile: require("@/assets/img/benner/Banner Mobile-01.jpg")
       // carousel3: require("@/assets/img/nature-3.jpg")
     };
   },
@@ -109,24 +124,24 @@ export default {
         this.responsive = true;
       }
     },
-    print(key){
+    print(key) {
       if (key == 0) {
-        window.open("https://wa.me/6285704368756")
-      } else if(key == 1){
-        window.open('https://www.instagram.com/teraskosid/')
+        window.open("https://wa.me/6285704368756");
+      } else if (key == 1) {
+        window.open("https://www.instagram.com/teraskosid/");
       } else if (key == 2) {
-        window.open('https://www.linkedin.com/company/teraskos');
+        window.open("https://www.linkedin.com/company/teraskos");
       } else if (key == 3) {
-        window.open('https://www.facebook.com/teraskosid');
+        window.open("https://www.facebook.com/teraskosid");
       }
     }
   },
   computed: {
-    getCount(){
-      return Number(this.count)
+    getCount() {
+      return Number(this.count);
     },
-    getIsOpenNewTab(){
-      return Boolean(this.isOpenNewTab)
+    getIsOpenNewTab() {
+      return Boolean(this.isOpenNewTab);
     }
   },
   mounted() {

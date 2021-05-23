@@ -9,8 +9,24 @@
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
         <!-- <h3 class="md-title">Vue Material Kit</h3> -->
-        <b-img :class="{ 'd-none': isScrolled, 'd-block': !isScrolled }" :src="image.logoWhite" fluid alt="Fluid image" width="100" height="100" style="height: 3.5rem;width: 8.3rem;"></b-img>
-        <b-img :class="{ 'd-none': !isScrolled, 'd-block': isScrolled }" :src="image.logoOri" fluid alt="Fluid image" width="100" height="100" style="height: 3.5rem;width: 8.3rem;"></b-img>
+        <b-img
+          :class="{ 'd-none': isScrolled, 'd-block': !isScrolled }"
+          :src="image.logoWhite"
+          fluid
+          alt="Fluid image"
+          width="100"
+          height="100"
+          style="height: 3.5rem;width: 8.3rem;"
+        ></b-img>
+        <b-img
+          :class="{ 'd-none': !isScrolled, 'd-block': isScrolled }"
+          :src="image.logoOri"
+          fluid
+          alt="Fluid image"
+          width="100"
+          height="100"
+          style="height: 3.5rem;width: 8.3rem;"
+        ></b-img>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -65,23 +81,40 @@
                 </a>
               </li>
 
-              <md-list-item
-              >
+              <md-list-item>
                 <!-- <i class="material-icons">content_paste</i> -->
-                <router-link tag="a" class="col" class-active="active" to="/" exact>Home</router-link>
+                <router-link
+                  tag="a"
+                  class="col"
+                  class-active="active"
+                  to="/"
+                  exact
+                  >Home</router-link
+                >
               </md-list-item>
-              <md-list-item
-              >
+              <md-list-item>
                 <!-- <i class="material-icons">content_paste</i> -->
-                <router-link tag="a" class="col" class-active="active" to="/mitra" exact>Mitra</router-link>
+                <router-link
+                  tag="a"
+                  class="col"
+                  class-active="active"
+                  to="/mitra"
+                  exact
+                  >Mitra</router-link
+                >
               </md-list-item>
-              <md-list-item
-              >
+              <md-list-item>
                 <!-- <i class="material-icons">content_paste</i> -->
                 <!-- <p>Article</p> -->
-                <router-link tag="a" class="col" class-active="active" to="/investor" exact>Investor</router-link>
+                <router-link
+                  tag="a"
+                  class="col"
+                  class-active="active"
+                  to="/investor"
+                  exact
+                  >Investor</router-link
+                >
               </md-list-item>
-
 
               <!-- <li class="md-list-item" v-else>
                 <a
@@ -122,7 +155,7 @@
                   </div>
                 </a>
               </li> -->
-              
+
               <!-- <md-list-item
                 href="https://wa.me/6285704368756"
                 target="_blank"
@@ -178,7 +211,7 @@
   box-shadow: none;
   padding-top: 25px;
 }
-a.router-link-exact-active.router-link-active{
+a.router-link-exact-active.router-link-active {
   font-weight: bolder;
   font-size: 15px;
 }
@@ -226,11 +259,11 @@ export default {
   data() {
     return {
       extraNavClasses: "",
-      isScrolled:false,
+      isScrolled: false,
       toggledClass: false,
-      image:{
-        logoOri:require("@/assets/img/icon/(ori) Logo Teraskos-Hor (1).png"),
-        logoWhite:require("@/assets/img/icon/(white) Logo Teraskos-Hor.png")
+      image: {
+        logoOri: require("@/assets/img/icon/(ori) Logo Teraskos-Hor (1).png"),
+        logoWhite: require("@/assets/img/icon/(white) Logo Teraskos-Hor.png")
       }
     };
   },

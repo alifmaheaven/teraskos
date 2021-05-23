@@ -3,7 +3,7 @@ module.exports = {
   // assetsPublicPath: '/public/haloo/',
   // outputDir: "../backend/public",
   // publicPath: process.env.NODE_ENV === "production" ? "/public/haloo/" : "/",
-  // indexPath: 
+  // indexPath:
   //   process.env.NODE_ENV === "production"
   //     ? "../resources/views/index.blade.php"
   //     : "index.html",

@@ -58,7 +58,7 @@
           <RecomendKos />
         </div>
       </div>
-      
+
       <div class="section p-3">
         <div class="container">
           <GuideForRegistration />
@@ -120,24 +120,31 @@
         </div>
       </div>
 
-      <quick-menu :menu-count="fabButton.getCount" :icon-class="fabButton.icons" :menu-url-list="fabButton.list" :background-color="fabButton.backgroundColor" :color="fabButton.color" :position="fabButton.position" :is-open-new-tab="fabButton.getIsOpenNewTab" @process="print"></quick-menu>
-
-
+      <quick-menu
+        :menu-count="fabButton.getCount"
+        :icon-class="fabButton.icons"
+        :menu-url-list="fabButton.list"
+        :background-color="fabButton.backgroundColor"
+        :color="fabButton.color"
+        :position="fabButton.position"
+        :is-open-new-tab="fabButton.getIsOpenNewTab"
+        @process="print"
+      ></quick-menu>
     </div>
   </div>
 </template>
 
 <script>
-import quickMenu from 'vue-quick-menu'
+import quickMenu from "vue-quick-menu";
 import SearchKosAtas from "./components/homepage/SearchKosAtas";
 import GuideForRegistration from "./components/homepage/GuideForRegistration";
-import FasilityOnTerasKos from "./components/homepage/FasilityOnTerasKos"
-import RecomendKos from "./components/homepage/RecomendKos"
-import AboutTerasKos from "./components/homepage/AboutTerasKos"
-import TestimoniTerasKos from "./components/homepage/TestimoniTerasKos"
-import OurTeamTeraskos from "./components/homepage/OurTeamTeraskos"
-import ImpactTeraskos from "./components/homepage/ImpactTeraskos"
-import FaqTeraskos from "./components/homepage/FaqTeraskos"
+import FasilityOnTerasKos from "./components/homepage/FasilityOnTerasKos";
+import RecomendKos from "./components/homepage/RecomendKos";
+import AboutTerasKos from "./components/homepage/AboutTerasKos";
+import TestimoniTerasKos from "./components/homepage/TestimoniTerasKos";
+import OurTeamTeraskos from "./components/homepage/OurTeamTeraskos";
+import ImpactTeraskos from "./components/homepage/ImpactTeraskos";
+import FaqTeraskos from "./components/homepage/FaqTeraskos";
 export default {
   components: {
     SearchKosAtas,
@@ -156,21 +163,31 @@ export default {
   props: {},
   data() {
     return {
-      fabButton:{
-        count:4,
-        icons:["fab fa-whatsapp","fab fa-instagram","fab fa-linkedin","fab fa-facebook-square"],
-        list:[{'isLink':false},{'isLink':false},{'isLink':false},{'isLink':false}],
-        backgroundColor:'#0c8744',
-        color:'#ffffff',
-        position:'bottom-right',
-        isOpenNewTab:false
+      fabButton: {
+        count: 4,
+        icons: [
+          "fab fa-whatsapp",
+          "fab fa-instagram",
+          "fab fa-linkedin",
+          "fab fa-facebook-square"
+        ],
+        list: [
+          { isLink: false },
+          { isLink: false },
+          { isLink: false },
+          { isLink: false }
+        ],
+        backgroundColor: "#0c8744",
+        color: "#ffffff",
+        position: "bottom-right",
+        isOpenNewTab: false
       },
       firstname: null,
       email: null,
       password: null,
       responsive: false,
       carouselDekstop: require("@/assets/img/benner/Banner Web.jpg"),
-      carouselMobile: require("@/assets/img/benner/Banner Mobile-01.jpg"),
+      carouselMobile: require("@/assets/img/benner/Banner Mobile-01.jpg")
       // carousel3: require("@/assets/img/nature-3.jpg")
     };
   },
@@ -182,24 +199,24 @@ export default {
         this.responsive = true;
       }
     },
-    print(key){
+    print(key) {
       if (key == 0) {
-        window.open("https://wa.me/6285704368756")
-      } else if(key == 1){
-        window.open('https://www.instagram.com/teraskosid/')
+        window.open("https://wa.me/6285704368756");
+      } else if (key == 1) {
+        window.open("https://www.instagram.com/teraskosid/");
       } else if (key == 2) {
-        window.open('https://www.linkedin.com/company/teraskos');
+        window.open("https://www.linkedin.com/company/teraskos");
       } else if (key == 3) {
-        window.open('https://www.facebook.com/teraskosid');
+        window.open("https://www.facebook.com/teraskosid");
       }
     }
   },
   computed: {
-    getCount(){
-      return Number(this.count)
+    getCount() {
+      return Number(this.count);
     },
-    getIsOpenNewTab(){
-      return Boolean(this.isOpenNewTab)
+    getIsOpenNewTab() {
+      return Boolean(this.isOpenNewTab);
     }
   },
   mounted() {
