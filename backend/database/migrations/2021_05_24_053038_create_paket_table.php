@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateListfasilTable extends Migration
+class CreatePaketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateListfasilTable extends Migration
      */
     public function up()
     {
-        Schema::create('listfasil', function (Blueprint $table) {
-            $table->integer('kostID')->index('kostID');
-            $table->integer('fasilitasID')->index('fasilitasID');
+        Schema::create('paket', function (Blueprint $table) {
+            $table->integer('PaketID', true);
+            $table->string('nama', 50);
+            $table->text('isi');
             $table->integer('isActive');
             $table->timestamps();
         });
@@ -28,6 +29,6 @@ class CreateListfasilTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('listfasil');
+        Schema::dropIfExists('paket');
     }
 }

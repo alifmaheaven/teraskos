@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeysToAdminTable extends Migration
+class AddForeignKeysToMitrakosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddForeignKeysToAdminTable extends Migration
      */
     public function up()
     {
-        Schema::table('admin', function (Blueprint $table) {
-            $table->foreign('tipeID', 'admin_ibfk_1')->references('tipeID')->on('tipeadmin')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+        Schema::table('mitrakos', function (Blueprint $table) {
+            $table->foreign('PaketID', 'mitrakos_ibfk_1')->references('PaketID')->on('paket')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }
 
@@ -25,8 +25,8 @@ class AddForeignKeysToAdminTable extends Migration
      */
     public function down()
     {
-        Schema::table('admin', function (Blueprint $table) {
-            $table->dropForeign('admin_ibfk_1');
+        Schema::table('mitrakos', function (Blueprint $table) {
+            $table->dropForeign('mitrakos_ibfk_1');
         });
     }
 }

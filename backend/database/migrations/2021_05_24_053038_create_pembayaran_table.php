@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKostTable extends Migration
+class CreatePembayaranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,10 @@ class CreateKostTable extends Migration
      */
     public function up()
     {
-        Schema::create('kost', function (Blueprint $table) {
-            $table->integer('kostID', true);
-            $table->integer('MitraID')->index('mitraID');
-            $table->integer('tipeID')->index('tipeID');
-            $table->string('nama');
+        Schema::create('pembayaran', function (Blueprint $table) {
+            $table->integer('JenisID', true);
+            $table->string('nama', 10);
             $table->text('deskripsi');
-            $table->string('provinsi');
-            $table->string('kota');
-            $table->integer('kodepos');
-            $table->text('alamat');
             $table->integer('isActive');
             $table->timestamps();
         });
@@ -35,6 +29,6 @@ class CreateKostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kost');
+        Schema::dropIfExists('pembayaran');
     }
 }

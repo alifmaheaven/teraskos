@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeysToTipeTable extends Migration
+class CreateKamarTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddForeignKeysToTipeTable extends Migration
      */
     public function up()
     {
-        Schema::table('tipe', function (Blueprint $table) {
-            $table->foreign('MitraID', 'tipe_ibfk_1')->references('MitraID')->on('mitrakos')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+        Schema::create('kamar', function (Blueprint $table) {
+            $table->integer('KamarID', true);
+            $table->integer('jumlah');
+            $table->integer('KostID')->index('KostID');
+            $table->integer('isActive');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddForeignKeysToTipeTable extends Migration
      */
     public function down()
     {
-        Schema::table('tipe', function (Blueprint $table) {
-            $table->dropForeign('tipe_ibfk_1');
-        });
+        Schema::dropIfExists('kamar');
     }
 }

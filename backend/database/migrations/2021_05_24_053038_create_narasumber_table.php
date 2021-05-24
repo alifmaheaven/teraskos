@@ -14,7 +14,7 @@ class CreateNarasumberTable extends Migration
     public function up()
     {
         Schema::create('narasumber', function (Blueprint $table) {
-            $table->integer('narasumberID', true);
+            $table->integer('NarasumberID', true);
             $table->string('nama', 50);
             $table->string('email', 100);
             $table->string('noHP', 15);

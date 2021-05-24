@@ -14,7 +14,6 @@ class AddForeignKeysToKostTable extends Migration
     public function up()
     {
         Schema::table('kost', function (Blueprint $table) {
-            $table->foreign('tipeID', 'kost_ibfk_1')->references('tipeID')->on('tipe')->onUpdate('RESTRICT')->onDelete('RESTRICT');
             $table->foreign('MitraID', 'kost_ibfk_2')->references('MitraID')->on('mitrakos')->onUpdate('RESTRICT')->onDelete('RESTRICT');
             $table->foreign('MitraID', 'kost_ibfk_3')->references('MitraID')->on('mitrakos')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
@@ -28,7 +27,6 @@ class AddForeignKeysToKostTable extends Migration
     public function down()
     {
         Schema::table('kost', function (Blueprint $table) {
-            $table->dropForeign('kost_ibfk_1');
             $table->dropForeign('kost_ibfk_2');
             $table->dropForeign('kost_ibfk_3');
         });

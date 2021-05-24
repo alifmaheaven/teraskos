@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTerastalkTable extends Migration
+class CreateKostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateTerastalkTable extends Migration
      */
     public function up()
     {
-        Schema::create('terastalk', function (Blueprint $table) {
-            $table->integer('talkID', true);
-            $table->string('judul', 50);
+        Schema::create('kost', function (Blueprint $table) {
+            $table->integer('KostID', true);
+            $table->integer('MitraID')->index('mitraID');
+            $table->string('nama');
             $table->text('deskripsi');
-            $table->date('tgl');
-            $table->string('narasumber', 50);
+            $table->string('provinsi');
+            $table->string('kota');
+            $table->integer('kodepos');
+            $table->text('alamat');
             $table->integer('isActive');
             $table->timestamps();
         });
@@ -31,6 +34,6 @@ class CreateTerastalkTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('terastalk');
+        Schema::dropIfExists('kost');
     }
 }
