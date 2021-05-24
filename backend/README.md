@@ -60,3 +60,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Getting Started
+
+- Open your terminal
+- Navigate to the project
+- Update your composer with `composer update`
+- Do a migration db using `php artisan migrate`
+- Intasll JWT package for authentication `composer require tymon/jwt-auth`
+- Apply your package `php artisan vendor:publish --provider="TymonJWTAuthProvidersJWTAuthServiceProvider"`
+- Getting your jwt-aut secret `php artisan jwt:secret`
