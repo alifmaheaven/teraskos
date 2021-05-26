@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTerastalkTable extends Migration
+class CreateListhargaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateTerastalkTable extends Migration
      */
     public function up()
     {
-        Schema::create('terastalk', function (Blueprint $table) {
-            $table->integer('talkID', true);
-            $table->string('judul', 50);
-            $table->text('deskripsi');
-            $table->date('tgl');
-            $table->string('narasumber', 50);
+        Schema::create('listharga', function (Blueprint $table) {
+            $table->integer('HargaID', true);
+            $table->integer('KamarID')->index('KamarID');
+            $table->integer('penghuni');
+            $table->integer('lama');
+            $table->integer('harga');
             $table->integer('isActive');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateTerastalkTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('terastalk');
+        Schema::dropIfExists('listharga');
     }
 }

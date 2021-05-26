@@ -3,37 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\TipeAdmin;
+use App\Models\TipeKost;
 
-class TipeAdminController extends Controller
+class TipeKostController extends Controller
 {
     public function index()
     {
-        return TipeAdmin::all();
+        return TipeKost::all();
     }
 
-    public function show(TipeAdmin $tipeID)
+    public function show(TipeKost $tipeID)
     {
         return $tipeID;
     }
 
     public function store(Request $request)
     {
-        $article = TipeAdmin::create($request->all());
+        $article = TipeKost::create($request->all());
 
         return response()->json([
             'message' => 'Tipe Berhasil Ditambah',
         ], 201);
     }
 
-    public function update(Request $request, TipeAdmin $tipeID)
+    public function update(Request $request, TipeKost $tipeID)
     {
         $tipeID->update($request->all());
 
         return response()->json($tipeID, 200);
     }
 
-    public function delete(TipeAdmin $tipeID)
+    public function delete(TipeKost $tipeID)
     {
         $tipeID->delete();
 

@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TipeAdmin extends Model
+class Fasilitas extends Model
 {
     use HasFactory;
 
-    protected $table = 'tipeadmin';
-    protected $primaryKey = "tipeID";
+    protected $table = 'fasilitas';
+    protected $primaryKey = 'fasilitasID';
     
     /**
      * The attributes that are mass assignable.
@@ -18,9 +18,8 @@ class TipeAdmin extends Model
      * @var array
      */
     protected $fillable = [
-        'jenis',
+        'nama',
         'deskripsi',
-        'tipeID',
         'isActive',
     ];
 }

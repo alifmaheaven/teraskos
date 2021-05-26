@@ -23,7 +23,7 @@ class CreateMitrakosTable extends Migration
             $table->string('pekerjaan');
             $table->string('institusi')->nullable();
             $table->text('testimoni')->nullable();
-            $table->integer('paketID')->index('paketID');
+            $table->integer('PaketID')->index('paketID');
             $table->integer('isActive');
             $table->timestamps();
         });

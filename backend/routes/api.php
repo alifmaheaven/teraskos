@@ -2,12 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Orion\Facades\Orion;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MitraKosController;
 use App\Http\Controllers\TipeAdminController;
 use App\Http\Controllers\TipeMitraController;
+use App\Http\Controllers\TipeKostController;
+use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\KostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +56,30 @@ Route::group(['prefix' => 'mitra'], function ($router) {
 });
 
 Route::group(['prefix' => 'tipe'], function ($router) {
-    Orion::resource('admin', TipeAdminController::class);
-    Orion::resource('mitra', TipeMitraController::class);
+    Route::get('admin', [TipeAdminController::class, 'index']);
+    Route::get('admin/{tipeID}', [TipeAdminController::class, 'show']);
+    Route::post('admin', [TipeAdminController::class, 'store']);
+    Route::put('admin/{tipeID}', [TipeAdminController::class, 'update']);
+    Route::delete('admin/{tipeID}', [TipeAdminController::class, 'delete']);
+
+    Route::get('mitra', [TipeMitraController::class, 'index']);
+    Route::get('mitra/{MitraID}', [TipeMitraController::class, 'show']);
+    Route::post('mitra', [TipeMitraController::class, 'store']);
+    Route::put('mitra/{MitraID}', [TipeMitraController::class, 'update']);
+    Route::delete('mitra/{MitraID}', [TipeMitraController::class, 'delete']);
+
+    Route::get('kost', [TipeKostController::class, 'index']);
+    Route::get('kost/{tipeID}', [TipeKostController::class, 'show']);
+    Route::post('kost', [TipeKostController::class, 'store']);
+    Route::put('kost/{tipeID}', [TipeKostController::class, 'update']);
+    Route::delete('kost/{tipeID}', [TipeKostController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'kost'], function ($router) {
+    Route::get('fasilitas', [FasilitasController::class, 'index']);
+    Route::get('fasilitas/{fasilitasID}', [FasilitasController::class, 'show']);
+    Route::post('fasilitas', [FasilitasController::class, 'store']);
+    Route::put('fasilitas/{fasilitasID}', [FasilitasController::class, 'update']);
+    Route::delete('fasilitas/{fasilitasID}', [FasilitasController::class, 'delete']);
+
 });

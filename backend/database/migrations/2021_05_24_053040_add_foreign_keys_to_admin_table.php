@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFasilitasTable extends Migration
+class AddForeignKeysToAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateFasilitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('fasilitas', function (Blueprint $table) {
-            $table->integer('fasilitasID', true);
-            $table->string('nama');
-            $table->text('deskripsi');
-            $table->integer('isActive');
-            $table->timestamps();
+        Schema::table('admin', function (Blueprint $table) {
+            $table->foreign('tipeID', 'admin_ibfk_1')->references('TipeID')->on('tipeadmin')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateFasilitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fasilitas');
+        Schema::table('admin', function (Blueprint $table) {
+            $table->dropForeign('admin_ibfk_1');
+        });
     }
 }
