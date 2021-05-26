@@ -41,7 +41,7 @@
                 ></b-img>
               </div>
               <div class="col-12 d-flex justify-content-center text-center">
-                <h6>{{ item.name }}</h6>
+                <span style="text-transform: capitalize;">{{ item.name }}</span>
               </div>
             </div>
           </div>

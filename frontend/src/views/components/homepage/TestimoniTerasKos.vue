@@ -6,7 +6,7 @@
         Udah banyak banget loh testi moni mitra teras kos!
       </h3>
     </div>
-    <div class="col-6">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
       <h5 class="font-weight-bold text-center">Mitra</h5>
       <carousel
         style="width:100%;"
@@ -44,7 +44,7 @@
         </slide>
       </carousel>
     </div>
-    <div class="col-6">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
       <h5 class="font-weight-bold text-center">Pengguna</h5>
       <carousel
         style="width:100%;"

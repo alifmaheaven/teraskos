@@ -14,7 +14,7 @@
         <ValidationObserver ref="form">
           <form>
             <div class="row">
-              <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                 <ValidationProvider
                   name="Location"
                   rules="required"
@@ -53,7 +53,7 @@
                   </div>
                 </ValidationProvider>
               </div>
-              <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                 <ValidationProvider
                   name="Check-In"
                   rules="required"
@@ -81,7 +81,7 @@
                   </div>
                 </ValidationProvider>
               </div>
-              <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                 <ValidationProvider
                   name="Check-Out"
                   rules="required"
@@ -109,7 +109,36 @@
                   </div>
                 </ValidationProvider>
               </div>
-              <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-2 col-lg-4">
+                <ValidationProvider
+                  name="Note"
+                  rules="required"
+                  v-slot="{ errors, valid, invalid }"
+                >
+                  <div class="form-group">
+                    <label for="validationServer01"><h6>Catatan</h6></label>
+                    <textarea 
+                      class="form-control" 
+                      :class="{
+                        'is-invalid-v-dropdown': errors[0] && invalid,
+                        'is-valid-v-dropdown': valid,
+                        'is-invalid': errors[0] && invalid,
+                        'is-valid': valid
+                      }"
+                      placeholder="Note"
+                      v-model="form.note"
+                      rows="1">
+                    </textarea>
+                    <div class="invalid-feedback">
+                      {{ errors[0] }}
+                    </div>
+                    <div class="valid-feedback">
+                      <!-- Looks Good! -->
+                    </div>
+                  </div>
+                </ValidationProvider>
+              </div>
+              <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                 <div class="form-group">
                   <label for="validationServer01"><h6>Days</h6></label>
                   <input
@@ -158,7 +187,8 @@ export default {
       form: {
         location: null,
         checkin: null,
-        checkout: null
+        checkout: null,
+        note: '',
       },
       dropdownLocation: [
         {
@@ -192,17 +222,17 @@ export default {
     },
     search() {
       this.$refs.form.validate().then(success => {
-        // if (!success) {
-        //     var cekForm = document.getElementsByClassName("is-invalid");
-        //     cekForm[0].focus();
-        //     this.$swal({
-        //         icon: 'error',
-        //         title: 'Maaf',
-        //         text: 'Yuk dilengkapi dulu form pencariannya!',
-        //         showConfirmButton: false,
-        //     });
-        //     return;
-        // }
+        if (!success) {
+            var cekForm = document.getElementsByClassName("is-invalid");
+            cekForm[0].focus();
+            this.$swal({
+                icon: 'error',
+                title: 'Maaf',
+                text: 'Yuk dilengkapi dulu form pencariannya!',
+                showConfirmButton: false,
+            });
+            return;
+        }
         window.open(
           `https://api.whatsapp.com/send?phone=6285704368756&text=Assalamualaikum%20wr.%20wb.%20%0Asaya%20ingin%20memesan%20kos%20daerah%20%3A%20${
             this.form.location
@@ -214,12 +244,10 @@ export default {
             this.form.checkout
           )
             .replace(" ", "%20")
-            .replace(
-              ",",
-              "%2C"
-            )}%0Abanyak%20hari%20%3A%20${this.timeRemaning
+            .replace(",","%2C")}%0Abanyak%20hari%20%3A%20${this.timeRemaning
             .replace(" ", "%20")
-            .replace(",", "%2C")}%0A%0Aterimakasih%2C%0A`
+            .replace(",", "%2C")}
+            %0Acatatan%20%3A%20%20${this.form.note.replace(" ", "%20")}%0A%0Aterimakasih%2C`
         );
         // https://api.whatsapp.com/send?phone=6285156597025&text=Assalamualaikum%20wr.%20wb.%20%0Asaya%20ingin%20memesan%20kos%20daerah%20%3A%20%0Adari%20tanggal%20%3A%0Acheck%20in%20%3A%0Acheck%20out%3A%0Abanyak%20hari%20%3A%0A%0Aterimakasih%2C%0A   2%20bulan%2C%2011%20hari
       });

@@ -40,7 +40,7 @@
         </div>
       </div>
     </parallax>
-    <div class="main main-raised">
+    <div class="main main-raised" :class="{'mx-5':responsive}">
       <div class="section p-3">
         <div class="container-fluid p-0">
           <SearchKosAtas />
@@ -59,11 +59,11 @@
         </div>
       </div>
 
-      <div class="section p-3">
+      <!-- <div class="section p-3">
         <div class="container">
           <GuideForRegistration />
         </div>
-      </div>
+      </div> -->
 
       <div class="section p-3">
         <div class="container">
@@ -137,7 +137,7 @@
 <script>
 import quickMenu from "vue-quick-menu";
 import SearchKosAtas from "./components/homepage/SearchKosAtas";
-import GuideForRegistration from "./components/homepage/GuideForRegistration";
+// import GuideForRegistration from "./components/homepage/GuideForRegistration";
 import FasilityOnTerasKos from "./components/homepage/FasilityOnTerasKos";
 import RecomendKos from "./components/homepage/RecomendKos";
 import AboutTerasKos from "./components/homepage/AboutTerasKos";
@@ -148,7 +148,7 @@ import FaqTeraskos from "./components/homepage/FaqTeraskos";
 export default {
   components: {
     SearchKosAtas,
-    GuideForRegistration,
+    // GuideForRegistration,
     FasilityOnTerasKos,
     RecomendKos,
     AboutTerasKos,
@@ -203,7 +203,7 @@ export default {
       if (key == 0) {
         window.open("https://wa.me/6285704368756");
       } else if (key == 1) {
-        window.open("https://www.instagram.com/teraskosid/");
+        window.open("https://www.instagram.com/teraskos.info/");
       } else if (key == 2) {
         window.open("https://www.linkedin.com/company/teraskos");
       } else if (key == 3) {

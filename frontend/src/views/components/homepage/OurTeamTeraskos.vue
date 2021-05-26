@@ -4,7 +4,7 @@
       <h2 class="font-weight-normal text-center">Team Teras kos</h2>
     </div>
     <div class="row col-12 p-5">
-      <div class="col-6">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
         <div class="our-team">
           <div class="pic">
             <img :src="foto.ke1" />
@@ -17,13 +17,13 @@
           </div>
           <div class="team-content">
             <div class="team-info">
-              <h3 class="title">M. Rakhmat Setiawan</h3>
+              <h3 class="title">M.Rakhmat Setiawan</h3>
               <span class="post">Founder & CEO</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
         <div class="our-team">
           <div class="pic">
             <img :src="foto.ke2" />
