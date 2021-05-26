@@ -1,9 +1,9 @@
 <template>
   <div class="row">
     <div class="col-12">
-      <h2 class="font-weight-normal">Pertanyaan?</h2>
+      <h2 class="font-weight-normal">NYAMAN NGE-KOS DI TERASKOS</h2>
       <h3 class="font-weight-bold ">
-        berikut beberapa pertanyaan terasers yang kami rangkum!
+        Beberapa pertanyaan yang sering ditanyakan pengguna Teraskos
       </h3>
     </div>
     <div class="col-12">

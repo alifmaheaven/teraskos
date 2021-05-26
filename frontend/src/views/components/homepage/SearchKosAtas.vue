@@ -3,9 +3,9 @@
     <div class="card-body">
       <div class="row">
         <div class="col-12">
-          <h2 class="font-weight-normal">hello terasers,</h2>
+          <h2 class="font-weight-normal">CARI KOS KOSAN DI TERAS KOS</h2>
           <h3 class="font-weight-bold">
-            Mau cari kos kosan dimana nih? yuk cari :
+            Cari kos di daerah kalian inginkan
           </h3>
         </div>
       </div>

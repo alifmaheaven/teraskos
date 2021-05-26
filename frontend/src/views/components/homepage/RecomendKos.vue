@@ -1,9 +1,9 @@
 <template>
   <div class="row">
     <div class="col-12">
-      <h2 class="font-weight-normal">Rekomendasi?</h2>
+      <h2 class="font-weight-normal">KOS MURAH & BERKUALITAS</h2>
       <h3 class="font-weight-bold ">
-        Nih remendasi kos kos mitra terbaik teras kos!
+        Pilih kos murah dan berkualitas di jember!
       </h3>
     </div>
     <carousel

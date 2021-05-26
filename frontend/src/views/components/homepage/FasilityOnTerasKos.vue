@@ -1,9 +1,9 @@
 <template>
   <div class="row">
     <div class="col-12">
-      <h2 class="font-weight-normal">Fasilitas?</h2>
+      <h2 class="font-weight-normal">FASILITAS</h2>
       <h3 class="font-weight-bold ">
-        Terasers tak perlu kawatir, fasilitas kami cukup lengkap kok!
+        Fasilitas yang bisa dinikmati di teraskos
       </h3>
     </div>
     <carousel

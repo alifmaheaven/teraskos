@@ -17,7 +17,9 @@
               navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
             >
               <slide>
-                <img :src="carouselDekstop" alt="carousel1" />
+                <a @click="toWhatsapp()">
+                  <img :src="carouselDekstop" alt="carousel1" />
+                </a>
               </slide>
             </carousel>
             <carousel
@@ -33,7 +35,9 @@
               navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
             >
               <slide>
-                <img :src="carouselMobile" alt="carousel1" />
+                <a @click="toWhatsapp()">
+                  <img :src="carouselMobile" alt="carousel1" />
+                </a>
               </slide>
             </carousel>
           </div>
@@ -71,11 +75,11 @@
         </div>
       </div>
 
-      <div class="section p-3">
+      <!-- <div class="section p-3">
         <div class="container">
           <TestimoniTerasKos />
         </div>
-      </div>
+      </div> -->
 
       <div class="section p-3">
         <div class="container">
@@ -141,7 +145,7 @@ import SearchKosAtas from "./components/homepage/SearchKosAtas";
 import FasilityOnTerasKos from "./components/homepage/FasilityOnTerasKos";
 import RecomendKos from "./components/homepage/RecomendKos";
 import AboutTerasKos from "./components/homepage/AboutTerasKos";
-import TestimoniTerasKos from "./components/homepage/TestimoniTerasKos";
+// import TestimoniTerasKos from "./components/homepage/TestimoniTerasKos";
 import OurTeamTeraskos from "./components/homepage/OurTeamTeraskos";
 import ImpactTeraskos from "./components/homepage/ImpactTeraskos";
 import FaqTeraskos from "./components/homepage/FaqTeraskos";
@@ -152,7 +156,7 @@ export default {
     FasilityOnTerasKos,
     RecomendKos,
     AboutTerasKos,
-    TestimoniTerasKos,
+    // TestimoniTerasKos,
     OurTeamTeraskos,
     ImpactTeraskos,
     FaqTeraskos,
@@ -192,6 +196,9 @@ export default {
     };
   },
   methods: {
+    toWhatsapp(){
+      window.open('https://api.whatsapp.com/send?phone=6285704368756&text=Assalamualaiku%20wr.%20wb.%0A%0Asaya%20ingin%20mencari%20kos%20kosan%20di%20teras%20kos')
+    },
     FuncReponsive() {
       if (window.innerWidth < 768) {
         this.responsive = false;
