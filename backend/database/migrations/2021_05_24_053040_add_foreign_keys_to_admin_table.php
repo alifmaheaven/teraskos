@@ -14,7 +14,7 @@ class AddForeignKeysToAdminTable extends Migration
     public function up()
     {
         Schema::table('admin', function (Blueprint $table) {
-            $table->foreign('tipeID', 'admin_ibfk_1')->references('TipeID')->on('tipeadmin')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+            $table->foreign('TipeID', 'admin_ibfk_1')->references('TipeID')->on('tipeadmin')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }
 

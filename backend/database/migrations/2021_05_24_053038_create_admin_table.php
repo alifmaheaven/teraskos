@@ -18,7 +18,7 @@ class CreateAdminTable extends Migration
             $table->string('nama');
             $table->string('email');
             $table->string('password');
-            $table->integer('tipeID')->index('tipeID');
+            $table->integer('TipeID')->index('TipeID');
             $table->integer('isActive');
             $table->timestamps();
         });
