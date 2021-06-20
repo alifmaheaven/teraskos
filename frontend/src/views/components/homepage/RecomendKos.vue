@@ -25,7 +25,10 @@
       navigationPrevLabel="<i class='text-success material-icons'>keyboard_arrow_left</i>"
     >
       <slide v-for="(item, index) in fasility" :key="index">
-        <div class="card border border-white shadow-sm rounded m-1" style="max-height: 600px;">
+        <div
+          class="card border border-white shadow-sm rounded m-1"
+          style="max-height: 600px;"
+        >
           <div class="card-body">
             <div class="row">
               <div class="col-12 shadow-sm p-0 rounded">
@@ -37,17 +40,24 @@
                 ></b-img>
               </div>
               <div class="col-12 my-1 mx-0 p-0">
-                <h5 class="font-weight-bold">{{item.name}}</h5>
+                <h5 class="font-weight-bold">{{ item.name }}</h5>
                 <h6>
-                  {{item.desc}}
+                  {{ item.desc }}
                 </h6>
-                <h6 class="font-weight-bold" style="font-size: 0.60rem;">{{item.desc2}}</h6>
+                <h6 class="font-weight-bold" style="font-size: 0.60rem;">
+                  {{ item.desc2 }}
+                </h6>
                 <h4 class="font-weight-bold text-success">
-                  {{reformatToRupiah(item.price)}}<span style="font-size: 0.75rem;color: black;"> / {{item.noteAfterPrice}}</span>
-                  <br><span style="font-size: 0.60rem; color:black;">{{item.noteBottomPrice}}</span>
+                  {{ reformatToRupiah(item.price)
+                  }}<span style="font-size: 0.75rem;color: black;">
+                    / {{ item.noteAfterPrice }}</span
+                  >
+                  <br /><span style="font-size: 0.60rem; color:black;">{{
+                    item.noteBottomPrice
+                  }}</span>
                 </h4>
                 <h5 style="font-size: 0.90rem;">
-                  {{item.note}}
+                  {{ item.note }}
                 </h5>
               </div>
             </div>
@@ -68,82 +78,88 @@ export default {
         {
           name: "Kos Putra Ananta",
           desc: "Jl. Simpang Karimata No. 232, Jember",
-          desc2: "(Dekat Universitas Jember, Politeknik Negeri Jember & Universitas Muhammadiyah Jember)",
+          desc2:
+            "(Dekat Universitas Jember, Politeknik Negeri Jember & Universitas Muhammadiyah Jember)",
           picture: require("@/assets/img/mitrakos/Kos Putra Ananta.jpg"),
-          price:350000,
-          noteAfterPrice:'bulan berdua',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi & Air)',
-          note:'Terima kos sendiri untuk harian, mingguan & bulanan.'
+          price: 350000,
+          noteAfterPrice: "bulan berdua",
+          noteBottomPrice: "(+Termasuk biaya listrik, WiFi & Air)",
+          note: "Terima kos sendiri untuk harian, mingguan & bulanan."
         },
         {
           name: "Kos Putri As Salma",
           desc: "Jl. Karimata IV No. 50, Jember",
-          desc2:'(Dekat Universitas Muhammadiyah Jember, Universitas Jember & Politeknik Negeri Jember)',
+          desc2:
+            "(Dekat Universitas Muhammadiyah Jember, Universitas Jember & Politeknik Negeri Jember)",
           picture: require("@/assets/img/mitrakos/Kos Putri As Salma.jpg"),
-          price:500000,
-          noteAfterPrice:'bulan sendiri',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi, Gas & Air)',
-          note:'Terima kos harian, mingguan & bulanan.'
+          price: 500000,
+          noteAfterPrice: "bulan sendiri",
+          noteBottomPrice: "(+Termasuk biaya listrik, WiFi, Gas & Air)",
+          note: "Terima kos harian, mingguan & bulanan."
         },
         {
           name: "Kos Putri De Stone",
           desc: "Perumahan De Stone, Kavling 46, Gunung Batu, Jember",
-          desc2:"(Dekat Universitas Muhammadiyah Jember, Universitas Jember & Politeknik Negeri Jember)",
+          desc2:
+            "(Dekat Universitas Muhammadiyah Jember, Universitas Jember & Politeknik Negeri Jember)",
           picture: require("@/assets/img/mitrakos/Kos Putri De Stone.jpg"),
-          price:375000,
-          noteAfterPrice:'bulan berdua',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi & Air)',
-          note:'Terima kos harian, mingguan & bulanan.'
+          price: 375000,
+          noteAfterPrice: "bulan berdua",
+          noteBottomPrice: "(+Termasuk biaya listrik, WiFi & Air)",
+          note: "Terima kos harian, mingguan & bulanan."
         },
         {
           name: "Kos Putri Hening Lestari",
           desc: "Jl. Karimata IV No. 40, Jember",
-          desc2: "(Dekat Universitas Muhammadiyah Jember, Universitas Jember & Politeknik Negeri Jember)",
+          desc2:
+            "(Dekat Universitas Muhammadiyah Jember, Universitas Jember & Politeknik Negeri Jember)",
           picture: require("@/assets/img/mitrakos/Kos Putri Hening Lestari.jpg"),
-          price:400000,
-          noteAfterPrice:'bulan sendiri',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi & Air)',
-          note:'Terima kos harian, mingguan & bulanan.'
+          price: 400000,
+          noteAfterPrice: "bulan sendiri",
+          noteBottomPrice: "(+Termasuk biaya listrik, WiFi & Air)",
+          note: "Terima kos harian, mingguan & bulanan."
         },
         {
           name: "Kos Putri Jasmine",
           desc: "Jl. Letjend Panjaitan No. 62, Jember",
-          desc2:"Terima kos sendiri untuk harian, mingguan & bulanan.",
+          desc2: "Terima kos sendiri untuk harian, mingguan & bulanan.",
           picture: require("@/assets/img/mitrakos/Kos Putri Jasmine.jpg"),
-          price:475000,
-          noteAfterPrice:'bulan berdua',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi, Gas & Air)',
-          note:'Terima kos sendiri untuk harian, mingguan & bulanan.'
+          price: 475000,
+          noteAfterPrice: "bulan berdua",
+          noteBottomPrice: "(+Termasuk biaya listrik, WiFi, Gas & Air)",
+          note: "Terima kos sendiri untuk harian, mingguan & bulanan."
         },
         {
           name: "Kos Putri Orens",
           desc: "Jl. Nias III Perumahan Dcentronias A3, Jember",
-          desc2:"(Dekat STIE Mandala &Universitas Jember)",
+          desc2: "(Dekat STIE Mandala &Universitas Jember)",
           picture: require("@/assets/img/mitrakos/Kos Putri Orens.jpg"),
-          price:350000,
-          noteAfterPrice:'bulan berdua',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi & Air)',
-          note:'Terima kos sendiri untuk harian, mingguan & bulanan.'
+          price: 350000,
+          noteAfterPrice: "bulan berdua",
+          noteBottomPrice: "(+Termasuk biaya listrik, WiFi & Air)",
+          note: "Terima kos sendiri untuk harian, mingguan & bulanan."
         },
         {
           name: "Kos Putri Raisa 3",
           desc: "Jl. Jawa VII No.81A, Jember",
-          desc2:"(Dekat Universitas Jember, Politeknik Negeri Jember & Universitas Muhammadiyah Jember)",
+          desc2:
+            "(Dekat Universitas Jember, Politeknik Negeri Jember & Universitas Muhammadiyah Jember)",
           picture: require("@/assets/img/mitrakos/Kos Putri Raisa 3.jpg"),
-          price:350000,
-          noteAfterPrice:'bulan berdua',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi & Air)',
-          note:'Terima kos sendiri untuk harian, mingguan & bulanan.'
+          price: 350000,
+          noteAfterPrice: "bulan berdua",
+          noteBottomPrice: "(+Termasuk biaya listrik, WiFi & Air)",
+          note: "Terima kos sendiri untuk harian, mingguan & bulanan."
         },
         {
           name: "Kos Putri Safa",
           desc: "Jl. Mastrip IV No. 58, Jember (Sebelah Toko Rozy)",
-          desc2:"(Dekat Universitas Jember, Politeknik Negeri Jember & Universitas Muhammadiyah Jember)",
+          desc2:
+            "(Dekat Universitas Jember, Politeknik Negeri Jember & Universitas Muhammadiyah Jember)",
           picture: require("@/assets/img/mitrakos/Kos Putri Safa.jpg"),
-          price:325000,
-          noteAfterPrice:'bulan berdua',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi & Air)',
-          note:'Terima kos sendiri untuk harian, mingguan & bulanan.'
+          price: 325000,
+          noteAfterPrice: "bulan berdua",
+          noteBottomPrice: "(+Termasuk biaya listrik, WiFi & Air)",
+          note: "Terima kos sendiri untuk harian, mingguan & bulanan."
         },
         {
           name: "Kos Putri Surya Milenia",
@@ -151,10 +167,11 @@ export default {
           desc2: "(Dekat IAIN Jember",
           picture: require("@/assets/img/mitrakos/Kos Putri Surya Milenia.jpg"),
           price: 600000,
-          noteAfterPrice:'bulan sendiri',
-          noteBottomPrice:'(+Termasuk biaya listrik, WiFi, Air, Gas & Air Galon)',
-          note:'Terima kos sendiri untuk harian, mingguan & bulanan.'
-        },
+          noteAfterPrice: "bulan sendiri",
+          noteBottomPrice:
+            "(+Termasuk biaya listrik, WiFi, Air, Gas & Air Galon)",
+          note: "Terima kos sendiri untuk harian, mingguan & bulanan."
+        }
       ]
     };
   },

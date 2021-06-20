@@ -5,7 +5,7 @@
         <div class="col-12">
           <h2 class="font-weight-normal">CARI KOS MURAH & BERKUALITAS</h2>
           <h3 class="font-weight-normal">
-            Kami jamin kamu bakal <b>betah ngekos di Teraskos</b>. <br> 
+            Kami jamin kamu bakal <b>betah ngekos di Teraskos</b>. <br />
             Yuk cari kos yang sesuai dengan kebutuhanmu!
           </h3>
         </div>
@@ -22,7 +22,9 @@
                   v-slot="{ errors, valid, invalid }"
                 >
                   <div class="form-group">
-                    <label for="validationServer01"> <h6>Ngekos dimana</h6></label>
+                    <label for="validationServer01">
+                      <h6>Ngekos dimana</h6></label
+                    >
                     <v-select
                       :class="{
                         'is-invalid-v-dropdown': errors[0] && invalid,
@@ -61,7 +63,9 @@
                   v-slot="{ errors, valid, invalid }"
                 >
                   <div class="form-group">
-                    <label for="validationServer01"><h6>Pilih Tanggal</h6></label>
+                    <label for="validationServer01"
+                      ><h6>Pilih Tanggal</h6></label
+                    >
                     <date-picker
                       :class="{
                         'is-invalid-v-dropdown': errors[0] && invalid,
@@ -89,7 +93,9 @@
                   v-slot="{ errors, valid, invalid }"
                 >
                   <div class="form-group">
-                    <label for="validationServer01"><h6>Pilih Tanggal</h6></label>
+                    <label for="validationServer01"
+                      ><h6>Pilih Tanggal</h6></label
+                    >
                     <date-picker
                       :class="{
                         'is-invalid-v-dropdown': errors[0] && invalid,
@@ -117,9 +123,11 @@
                   v-slot="{ errors, valid, invalid }"
                 >
                   <div class="form-group">
-                    <label for="validationServer01"><h6>Tuliskan permintaanmu</h6></label>
-                    <textarea 
-                      class="form-control" 
+                    <label for="validationServer01"
+                      ><h6>Tuliskan permintaanmu</h6></label
+                    >
+                    <textarea
+                      class="form-control"
                       :class="{
                         'is-invalid-v-dropdown': errors[0] && invalid,
                         'is-valid-v-dropdown': valid,
@@ -128,7 +136,8 @@
                       }"
                       placeholder="contoh : minta kamar berdua, deket kampus, dsb"
                       v-model="form.note"
-                      rows="1">
+                      rows="1"
+                    >
                     </textarea>
                     <div class="invalid-feedback">
                       {{ errors[0] }}
@@ -189,7 +198,7 @@ export default {
         location: null,
         checkin: null,
         checkout: null,
-        note: '',
+        note: ""
       },
       dropdownLocation: [
         {
@@ -224,31 +233,34 @@ export default {
     search() {
       this.$refs.form.validate().then(success => {
         if (!success) {
-            var cekForm = document.getElementsByClassName("is-invalid");
-            cekForm[0].focus();
-            this.$swal({
-                icon: 'error',
-                title: 'Maaf',
-                text: 'Yuk dilengkapi dulu form pencariannya!',
-                showConfirmButton: false,
-            });
-            return;
+          var cekForm = document.getElementsByClassName("is-invalid");
+          cekForm[0].focus();
+          this.$swal({
+            icon: "error",
+            title: "Maaf",
+            text: "Yuk dilengkapi dulu form pencariannya!",
+            showConfirmButton: false
+          });
+          return;
         }
         window.open(
           `https://api.whatsapp.com/send?phone=6285704368756&text=Halo%20Kak%2C%0A%0ASaya%20ingin%20sewa%20kos%20dengan%20data%20%0Asebagai%20berikut%3A%0ALokasi%3A%20${
             this.form.location
-          }%0ACheck%20in%3A%20${this.reformatDateToID(
-            this.form.checkin
-          )
+          }%0ACheck%20in%3A%20${this.reformatDateToID(this.form.checkin)
             .replace(" ", "%20")
             .replace(",", "%2C")}%0ACheck%20out%3A%20${this.reformatDateToID(
             this.form.checkout
           )
             .replace(" ", "%20")
-            .replace(",","%2C")}%0ALama%20Ngekos%3A%20${this.timeRemaning
+            .replace(
+              ",",
+              "%2C"
+            )}%0ALama%20Ngekos%3A%20${this.timeRemaning
             .replace(" ", "%20")
-            .replace(",", "%2C")}.%0ACatatan%3A%20${this.form.note.replace(" ", "%20")}%0A%0ATolong%20dibantu%20untuk%20proses%20bookingnya%0Aya%20kak.%20Terima%20kasih!`
-
+            .replace(",", "%2C")}.%0ACatatan%3A%20${this.form.note.replace(
+            " ",
+            "%20"
+          )}%0A%0ATolong%20dibantu%20untuk%20proses%20bookingnya%0Aya%20kak.%20Terima%20kasih!`
         );
         // https://api.whatsapp.com/send?phone=6285156597025&text=Assalamualaikum%20wr.%20wb.%20%0Asaya%20ingin%20memesan%20kos%20daerah%20%3A%20%0Adari%20tanggal%20%3A%0Acheck%20in%20%3A%0Acheck%20out%3A%0Abanyak%20hari%20%3A%0A%0Aterimakasih%2C%0A   2%20bulan%2C%2011%20hari
       });

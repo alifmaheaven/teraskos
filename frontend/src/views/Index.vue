@@ -44,7 +44,7 @@
         </div>
       </div>
     </parallax>
-    <div class="main main-raised" :class="{'mx-5':responsive}">
+    <div class="main main-raised" :class="{ 'mx-5': responsive }">
       <div class="section p-3">
         <div class="container-fluid p-0">
           <SearchKosAtas />
@@ -196,8 +196,10 @@ export default {
     };
   },
   methods: {
-    toWhatsapp(){
-      window.open('https://api.whatsapp.com/send?phone=6285704368756&text=Halo%20Kak%2C%0A%0ASaya%20tertarik%20untuk%20sewa%20kos%20di%20salah%20satu%0Aproperti%20Teraskos.%20Boleh%20diinfokan%20untuk%0Aprice%20listnya%20kak%3F')
+    toWhatsapp() {
+      window.open(
+        "https://api.whatsapp.com/send?phone=6285704368756&text=Halo%20Kak%2C%0A%0ASaya%20tertarik%20untuk%20sewa%20kos%20di%20salah%20satu%0Aproperti%20Teraskos.%20Boleh%20diinfokan%20untuk%0Aprice%20listnya%20kak%3F"
+      );
     },
     FuncReponsive() {
       if (window.innerWidth < 768) {
