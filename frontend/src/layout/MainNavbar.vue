@@ -89,7 +89,7 @@
                   class-active="active"
                   to="/"
                   exact
-                  >Home</router-link
+                  >Beranda</router-link
                 >
               </md-list-item>
               <md-list-item>
@@ -100,7 +100,7 @@
                   class-active="active"
                   to="/mitra"
                   exact
-                  >Mitra</router-link
+                  >Sewakan Kosmu</router-link
                 >
               </md-list-item>
               <md-list-item>
@@ -112,7 +112,7 @@
                   class-active="active"
                   to="/investor"
                   exact
-                  >Investor</router-link
+                  >Investasi Kos</router-link
                 >
               </md-list-item>
 
