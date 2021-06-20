@@ -15,7 +15,7 @@ class AddForeignKeysToInvoiceTable extends Migration
     {
         Schema::table('invoice', function (Blueprint $table) {
             $table->foreign('CustomID', 'invoice_ibfk_1')->references('CustomID')->on('customer')->onUpdate('RESTRICT')->onDelete('RESTRICT');
-            $table->foreign('HargaID', 'invoice_ibfk_2')->references('KostID')->on('kost')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+            $table->foreign('HargaID', 'invoice_ibfk_2')->references('HargaID')->on('listharga')->onUpdate('RESTRICT')->onDelete('RESTRICT');
             $table->foreign('JenisID', 'invoice_ibfk_3')->references('JenisID')->on('pembayaran')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }

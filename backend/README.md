@@ -65,7 +65,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 - Open your terminal
 - Navigate to the project
+- First install composer `composer install`
 - Update your composer with `composer update`
+- Copy your .env file `cp .env.example .env` and then setting up the file
+- Refresh your .env setting `php artisan config:cache`
+- Getting a generate key for .env `php artisan key:generate`
 - Do a migration db using `php artisan migrate`
 - Intasll JWT package for authentication `composer require tymon/jwt-auth`
 - Apply your package `php artisan vendor:publish --provider="TymonJWTAuthProvidersJWTAuthServiceProvider"`
