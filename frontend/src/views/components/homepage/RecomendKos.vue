@@ -30,7 +30,7 @@
             <div class="row">
               <div class="col-12 shadow-sm p-0 rounded">
                 <b-img
-                  style="max-height: 120px;max-width: 260px;"
+                  style="height: 120px;width: 260px;object-fit: cover;"
                   :src="item.picture"
                   fluid-grow
                   alt="Fluid image"
