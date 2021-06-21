@@ -1,0 +1,87 @@
+  //dropdown
+
+  .is-valid-v-dropdown{
+    border: 1px solid #2eb85c;
+    border-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+
+  .is-invalid-v-dropdown{
+    border: 1px solid #e55353;
+    border-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+
+  // date picker
+  .mx-datepicker {
+    position: relative;
+    display: inline-block;
+    width: 100% !important;
+  }
+
+
+  // html custom
+  input, textarea {
+    font-size: 14px !important;
+  }
+
+  // page
+
+  .card-custom-border-green{
+      border: 2px solid #0c8744;  
+  }
+
+  .card-custom-shadow{
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0px 1px 0px rgb(0 0 0 / 14%), 0 0px 14px 0px rgb(0 0 0 / 12%), 0 0px 12px 0px rgb(0 0 0 / 20%);
+    box-shadow: 0 0px 1px 0px rgb(0 0 0 / 14%), 0 0px 14px 0px rgb(0 0 0 / 12%), 0 0px 12px 0px rgb(0 0 0 / 20%);
+  }
+
+  .index-page .page-header{
+    height: 100vh !important;
+  }
+
+  // text custom
+  .text-color-teraskos{
+    color: #0c8744
+  }
+
+  // responsive font
+
+  @function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+  }
+  
+  @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+  
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+      & {
+        font-size: $min-font-size;
+        @media screen and (min-width: $min-vw) {
+          font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        }
+        @media screen and (min-width: $max-vw) {
+          font-size: $max-font-size;
+        }
+      }
+    }
+  }
+
+  $min_width: 320px;
+  $max_width: 1366px;
+  $min_font: 12px;
+  $max_font: 20px;
+
+  html {
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  }
