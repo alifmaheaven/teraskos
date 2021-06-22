@@ -38,7 +38,7 @@ class AdminController extends Controller
             'nama' => 'required|string|between:2,100',
             'email' => 'required|string|email|max:100|unique:admin',
             'password' => 'required|string|confirmed|min:6',
-            'tipeID' => 'required|numeric',
+            'TipeID' => 'required|numeric',
             'isActive' => 'numeric',
         ]);
 
