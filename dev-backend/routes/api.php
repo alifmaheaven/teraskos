@@ -82,4 +82,9 @@ Route::group(['prefix' => 'kost'], function ($router) {
     Route::put('fasilitas/{fasilitasID}', [FasilitasController::class, 'update']);
     Route::delete('fasilitas/{fasilitasID}', [FasilitasController::class, 'delete']);
 
+    Route::get('all', [KostController::class, 'index']);
+    Route::get('show/{KostID}', [KostController::class, 'show']);
+    Route::post('add', [KostController::class, 'store']);
+    Route::put('update/{KostID}', [KostController::class, 'update']);
+    Route::delete('delete/{KostID}', [KostController::class, 'delete']);
 });
