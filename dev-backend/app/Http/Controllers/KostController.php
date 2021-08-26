@@ -4,14 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kost;
+use App\Models\MitraKos;
 use Validator;
 
 class KostController extends Controller
 {
     public function index()
     {
-        return Kost::where('MitraID', 3)->get();
+        return Kost::all();
     }
+
+    public function showbyID($MitraID)
+    {
+        $index = Kost::where('MitraID', $MitraID)->get();
+
+        if ($index->isEmpty()){
+            return [
+                'message' => 'Data Kost Belum Ada'
+            ];
+        }else{
+            return $index;
+        }
+    }
+
     public function show(Kost $KostID)
     {
         return $KostID;
@@ -20,10 +35,13 @@ class KostController extends Controller
     public function store(Request $request)
     {
         $req = Validator::make($request->all(), [
-            'nama' => 'required|string|between:2,100|unique:Kost',
-            'email' => 'required|string|email|max:100',
-            'password' => 'required|string|confirmed|min:6',
-            'TipeID' => 'required|numeric',
+            'MitraID' => 'required|numeric',
+            'nama' => 'required|string',
+            'deskripsi' => 'required|string',
+            'provinsi' => 'required|string',
+            'kota' => 'required|string',
+            'kodepos' => 'required|numeric',
+            'alamat' => 'required|string',
             'isActive' => 'numeric',
         ]);
 
@@ -32,13 +50,12 @@ class KostController extends Controller
         }
 
         $user = Kost::create(array_merge(
-                    $req->validated(),
-                    ['password' => bcrypt($request->password)]
-                ));
+            $req->validated()
+        ));
 
         return response()->json([
             'message' => 'Kost Sukses Ditambah',
-            'user' => $user
+            'Data Kost' => $user
         ], 201);
     }
 

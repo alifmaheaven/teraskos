@@ -83,6 +83,7 @@ Route::group(['prefix' => 'kost'], function ($router) {
     Route::delete('fasilitas/{fasilitasID}', [FasilitasController::class, 'delete']);
 
     Route::get('all', [KostController::class, 'index']);
+    Route::get('all/{MitraID}', [KostController::class, 'showbyID']);
     Route::get('show/{KostID}', [KostController::class, 'show']);
     Route::post('add', [KostController::class, 'store']);
     Route::put('update/{KostID}', [KostController::class, 'update']);
