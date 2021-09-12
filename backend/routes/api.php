@@ -7,7 +7,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MitraKosController;
 use App\Http\Controllers\TipeAdminController;
 use App\Http\Controllers\TipeMitraController;
-use App\Http\Controllers\TipeKostController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\KostController;
 
@@ -67,12 +66,6 @@ Route::group(['prefix' => 'tipe'], function ($router) {
     Route::post('mitra', [TipeMitraController::class, 'store']);
     Route::put('mitra/{MitraID}', [TipeMitraController::class, 'update']);
     Route::delete('mitra/{MitraID}', [TipeMitraController::class, 'delete']);
-
-    Route::get('kost', [TipeKostController::class, 'index']);
-    Route::get('kost/{tipeID}', [TipeKostController::class, 'show']);
-    Route::post('kost', [TipeKostController::class, 'store']);
-    Route::put('kost/{tipeID}', [TipeKostController::class, 'update']);
-    Route::delete('kost/{tipeID}', [TipeKostController::class, 'delete']);
 });
 
 Route::group(['prefix' => 'kost'], function ($router) {
