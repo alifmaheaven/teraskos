@@ -9,6 +9,7 @@ use App\Http\Controllers\TipeAdminController;
 use App\Http\Controllers\TipeMitraController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\KostController;
+use App\Http\Controllers\KamarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,4 +82,13 @@ Route::group(['prefix' => 'kost'], function ($router) {
     Route::post('add', [KostController::class, 'store']);
     Route::put('update/{KostID}', [KostController::class, 'update']);
     Route::delete('delete/{KostID}', [KostController::class, 'delete']);
+});
+
+Route::prefix('kamar')->group(function ($router) {
+    Route::get('all', [KamarController::class, 'index']);
+    Route::get('kost/{KostID}',  [KamarController::class, 'showbyID']);
+    Route::get('detail/{KamarID}', [KamarController::class, 'detail']);
+    Route::post('add', [KamarController::class, 'store']);
+    Route::put('update/{KamarID}', [KamarController::class, 'update']);
+    Route::delete('delete/{KamarID}',[KamarController::class, 'delete']);
 });
