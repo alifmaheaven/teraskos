@@ -10,6 +10,7 @@ use App\Http\Controllers\TipeMitraController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\KostController;
 use App\Http\Controllers\KamarController;
+use App\Http\Controllers\FasilitasKamarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,4 +92,11 @@ Route::prefix('kamar')->group(function ($router) {
     Route::post('add', [KamarController::class, 'store']);
     Route::put('update/{KamarID}', [KamarController::class, 'update']);
     Route::delete('delete/{KamarID}',[KamarController::class, 'delete']);
+
+    Route::get('fasilitas', [FasilitasKamarController::class, 'index']);
+    Route::get('fasilitas/{KamarID}', [FasilitasKamarController::class, 'show']);
+    Route::get('fasilitas/detail/{FasilID}', [FasilitasKamarController::class, 'detail']);
+    Route::post('fasilitas', [FasilitasKamarController::class, 'store']);
+    Route::put('fasilitas/{FasilID}', [FasilitasKamarController::class, 'update']);
+    Route::delete('fasilitas/{FasilID}', [FasilitasKamarController::class, 'delete']);
 });
