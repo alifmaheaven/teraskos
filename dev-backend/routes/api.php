@@ -11,6 +11,7 @@ use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\KostController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\FasilitasKamarController;
+use App\Http\Controllers\HargaKamarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,4 +100,10 @@ Route::prefix('kamar')->group(function ($router) {
     Route::post('fasilitas', [FasilitasKamarController::class, 'store']);
     Route::put('fasilitas/{FasilID}', [FasilitasKamarController::class, 'update']);
     Route::delete('fasilitas/{FasilID}', [FasilitasKamarController::class, 'delete']);
+
+    Route::get('harga/{KamarID}', [HargaKamarController::class, 'index']);
+    Route::get('harga/detail/{HargaID}', [HargaKamarController::class, 'show']);
+    Route::post('harga', [HargaKamarController::class, 'store']);
+    Route::put('harga/{HargaID}', [HargaKamarController::class, 'update']);
+    Route::delete('harga/{HargaID}', [HargaKamarController::class, 'delete']);
 });
