@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kost;
-use App\Models\MitraKos;
 use Validator;
 
 class KostController extends Controller
