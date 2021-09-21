@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MitraKosController;
 use App\Http\Controllers\TipeAdminController;
 use App\Http\Controllers\TipeMitraController;
+use App\Http\Controllers\IsiKemitraanController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\KostController;
 use App\Http\Controllers\KamarController;
@@ -69,6 +70,13 @@ Route::group(['prefix' => 'tipe'], function ($router) {
     Route::post('mitra', [TipeMitraController::class, 'store']);
     Route::put('mitra/{MitraID}', [TipeMitraController::class, 'update']);
     Route::delete('mitra/{MitraID}', [TipeMitraController::class, 'delete']);
+
+    Route::get('isimitra', [IsiKemitraanController::class, 'index']);
+    Route::get('isimitra/{PaketID}', [IsiKemitraanController::class, 'showByID']);
+    Route::get('isimitra/detail/{IsiPaketID}', [IsiKemitraanController::class, 'detail']);
+    Route::post('isimitra', [IsiKemitraanController::class, 'store']);
+    Route::put('isimitra/{IsiPaketID}', [IsiKemitraanController::class, 'update']);
+    Route::delete('isimitra/{IsiPaketID}', [IsiKemitraanController::class, 'delete']);
 });
 
 Route::group(['prefix' => 'kost'], function ($router) {
