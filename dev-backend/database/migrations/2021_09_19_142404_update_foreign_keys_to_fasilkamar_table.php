@@ -14,6 +14,7 @@ class UpdateForeignKeysToFasilkamarTable extends Migration
     public function up()
     {
         Schema::table('fasilkamar', function (Blueprint $table) {
+            $table->dropForeign('fasilkamar_ibfk_1');
             $table->foreign('KamarID', 'fasilkamar_ibfk_1')->references('KamarID')->on('kamar')->onUpdate('RESTRICT')->onDelete('RESTRICT');
         });
     }
